@@ -1,14 +1,12 @@
 package com.semantic.annotator.controller;
 
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
-import com.semantic.annotator.template.OffStreetParking;
-import com.semantic.annotator.template.ParkingSpot;
-import jdk.nashorn.internal.parser.JSONParser;
+import com.semantic.annotator.resource.AirQualityObserved;
+import com.semantic.annotator.resource.OffStreetParking;
+import com.semantic.annotator.resource.ParkingSpot;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -27,9 +24,11 @@ public class httpController {
     ParkingSpot[] parkingSpots;
     List<OffStreetParking> offStreetParkingList;
     List<ParkingSpot> parkingSpotList;
+    AirQualityObserved[] airQualityObserveds;
+    List<AirQualityObserved> airQualityObservedList;
 
     @RequestMapping("/")
-    public String getEntities(HttpServletRequest request, HttpServletResponse res, Model model) throws Exception {
+    public String getEntities() {
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -49,8 +48,6 @@ public class httpController {
         headers.set("accept", "application/ld+json");
         HttpEntity<String> entity = new HttpEntity<String>(headers);
 
-//        String result = restTemplate.exchange(url+type.get(0), HttpMethod.GET, entity, String.class).getBody();
-
         JsonParser jsonParser = new JsonParser();
         JsonArray jsonArray = new JsonArray();
 
@@ -58,15 +55,6 @@ public class httpController {
 
         for(int i = 0; i < type.size(); i++ ) {
             String result = restTemplate.exchange(url+type.get(i), HttpMethod.GET, entity, String.class).getBody();
-
-
-//            jsonArray.add(jsonParser.parse(result));
-
-//            if(i==0) {
-//                json = gson.fromJson(result, OffStreetParking[].class);
-//                offStreetParkingList = Arrays.asList(json);
-//                System.out.println(gson.toJson(offStreetParkingList));
-//            }
 
             switch (i) {
                 case 0:
@@ -78,6 +66,11 @@ public class httpController {
                     parkingSpots = gson.fromJson(result, ParkingSpot[].class);
                     parkingSpotList = Arrays.asList(parkingSpots);
 //                    System.out.println(gson.toJson(parkingSpotList));
+                    break;
+                case 2:
+                    airQualityObserveds = gson.fromJson(result, AirQualityObserved[].class);
+                    airQualityObservedList = Arrays.asList(airQualityObserveds);
+                    break;
             }
         }
 
