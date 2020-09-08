@@ -237,6 +237,46 @@
       "domain":"http:\/\/www.w3.org\/2006\/time#Instant_3",
       "property":"http:\/\/www.w3.org\/2006\/time#inDateTime",
       "range":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
+      "property":"http:\/\/www.w3.org\/2006\/time#inDateTime",
+      "range":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Monday"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Tuesday"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Wednesday"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Thursday"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Friday"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Saturday"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#GeneralDateTimeDescription_1",
+      "property":"http:\/\/www.w3.org\/2006\/time#dayOfWeek",
+      "range":"http://www.w3.org/2006/time#Sunday"
     }
   ],
   "data-properties":[
@@ -298,6 +338,11 @@
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ContactPoint_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
+      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
+    },
+    {
+      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingServicePrice_1",
+      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasPaymentType",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
     },
     {
@@ -539,6 +584,16 @@
       "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
       "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_3",
+      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
+      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
+    },
+    {
+      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
+      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
+      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingCongestionEstimation_1",

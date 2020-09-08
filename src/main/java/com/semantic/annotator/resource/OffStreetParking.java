@@ -13,6 +13,7 @@ public class OffStreetParking {
     private AvailableSpotNumber availableSpotNumber;
     private Status status;
     private ContactPoint contactPoint;
+    private PaymentAccepted paymentAccepted;
     private PriceRate priceRate;
     private PriceCurrency priceCurrency;
     private Image image;
@@ -21,10 +22,10 @@ public class OffStreetParking {
     private String createdAt;
     private String modifiedAt;
     private OpeningHours openingHours;
-    private String type;
-    private PaymentAccepted paymentAccepted;
-    //    private String parkingLotURI;
     private CongestionIndexPrediction congestionIndexPrediction;
+
+    private String type;
+    //    private String parkingLotURI;
     //    private Object maximumAllowedHeight;
     private RefParkingSpots refParkingSpots;
 //    private String observedAt;
@@ -52,14 +53,14 @@ public class OffStreetParking {
         private LocationValue value;
         public class LocationValue {
             private String type;
-            private Object coordinates;
+            private Object[] coordinates;
 
             public String getType() {
                 return type;
             }
 
-            public Object getCoordinates() {
-                return coordinates;
+            public Object getCoordinates(int i) {
+                return coordinates[i];
             }
         }
         public LocationValue getValue() {
@@ -73,7 +74,6 @@ public class OffStreetParking {
     }
     public class Status {
         private String type;
-
         private Object[] value;
         public Object getValue(int i) {
             return value[i];
@@ -142,9 +142,25 @@ public class OffStreetParking {
         private String type;
         private CongestionIndexPredictionValue value;
         public class CongestionIndexPredictionValue {
-            private Object predictedAt;
+            private Object[] predictedAt;
             private Object index;
+
+            public Object getPredictedAt(int i) {
+                return predictedAt[i];
+            }
+
+            public Object getIndex() {
+                return index;
+            }
         }
+
+        public CongestionIndexPredictionValue getValue() {
+            return value;
+        }
+    }
+
+    public CongestionIndexPrediction getCongestionIndexPrediction() {
+        return congestionIndexPrediction;
     }
 
     public class AvailableSpotNumber {
@@ -167,31 +183,45 @@ public class OffStreetParking {
         public Object getValue(int i) {
             return value[i];
         }
+
+    }
+
+    public class PaymentAccepted {
+        private String type;
+        private Object[] value;
+
+        public Object getValue(int i) {
+            return value[i];
+        }
+    }
+
+    public PaymentAccepted getPaymentAccepted() {
+        return paymentAccepted;
     }
 
     public PriceCurrency getPriceCurrency() {
         return priceCurrency;
     }
-
     public class LocationTag {
         private String type;
-        private String value;
 
+        private String value;
         public String getValue() {
             return value;
         }
+
     }
 
     public LocationTag getLocationTag() {
         return locationTag;
     }
-
     public class ContactPoint {
         private String type;
         private ContactPointValue value;
         public class ContactPointValue {
             private String telephone;
             private String contactType;
+
             private String email;
 
             public String getTelephone() {
@@ -201,21 +231,20 @@ public class OffStreetParking {
             public String getContactType() {
                 return contactType;
             }
-
             public String getEmail() {
                 return email;
             }
-        }
 
+        }
         public ContactPointValue getValue() {
             return value;
         }
+
     }
 
     public ContactPoint getContactPoint() {
         return contactPoint;
     }
-
     public class Address {
         private String type;
         private AddressValue value;
@@ -224,6 +253,7 @@ public class OffStreetParking {
             private String addressRegion;
             private String addressLocality;
             private String streetAddress;
+
             private String addressTown;
 
             public String getAddressCountry() {
@@ -241,50 +271,45 @@ public class OffStreetParking {
             public String getStreetAddress() {
                 return streetAddress;
             }
-
             public String getAddressTown() {
                 return addressTown;
             }
-        }
 
+        }
         public AddressValue getValue() {
             return value;
         }
+
     }
 
     public Address getAddress() {
         return address;
     }
-
     public class PriceRate {
         private String type;
-        private String value;
 
+        private String value;
         public String getValue() {
             return value;
         }
+
     }
 
     public PriceRate getPriceRate() {
         return priceRate;
     }
-
     public class Image {
         private String type;
-        private String value;
 
+        private String value;
         public String getValue() {
             return value;
         }
+
     }
 
     public Image getImage() {
         return image;
-    }
-
-    public class PaymentAccepted {
-        private String type;
-        private Object value;
     }
 
     public String getId() {
