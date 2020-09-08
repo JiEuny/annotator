@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
 
@@ -32,7 +33,8 @@ public class httpController {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = "http://192.168.0.20:8080/entities?type=";
+//        String url = "http://192.168.0.20:8080/entities?type=";
+        String url = "http://localhost:8080/entities?type=";
 
 //        String url = "http://localhost:12345";
 
@@ -52,6 +54,7 @@ public class httpController {
         JsonArray jsonArray = new JsonArray();
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Map<String, Object> temp = new LinkedHashMap<>();
 
         for(int i = 0; i < type.size(); i++ ) {
             String result = restTemplate.exchange(url+type.get(i), HttpMethod.GET, entity, String.class).getBody();
@@ -61,6 +64,7 @@ public class httpController {
                     offStreetParkings = gson.fromJson(result, OffStreetParking[].class);
                     offStreetParkingList = Arrays.asList(offStreetParkings);
 //                    System.out.println(gson.toJson(offStreetParkingList));
+
                     break;
                 case 1:
                     parkingSpots = gson.fromJson(result, ParkingSpot[].class);
@@ -91,11 +95,14 @@ public class httpController {
 //        List<OffStreetParking> list = Arrays.asList(w);
 
 //        System.out.println(gson.toJson(list));
-        System.out.println(gson.toJson(parkingSpotList.get(0)));
-//        System.out.println(offStreetParkingList.get(0).getId());
+        System.out.println(gson.toJson(offStreetParkingList.get(0)));
+//        System.out.println(offStreetParkingList.get(0));
 //        System.out.println(parkingSpotList.get(0));
-        System.out.println(parkingSpotList.get(0).getAdd());
+//        ParkingSpot spot = parkingSpotList.get(0);
 
+
+
+        System.out.println(offStreetParkingList.get(0).getOpeningHours().getValue());
 
 
         return "test";
