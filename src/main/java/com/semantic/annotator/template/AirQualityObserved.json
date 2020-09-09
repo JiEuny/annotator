@@ -245,11 +245,6 @@
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
     },
     {
-      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_3",
-      "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
-    },
-    {
       "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
       "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"

@@ -68,4 +68,15 @@ public class OffStreetParkingDTO {
     private String estimatedValue;    //getCongestionIndexPrediction().getValue().getIndex().toString()
     private String predictedAt;     //getCongestionIndexPrediction().getValue().getPredictedAt(0).toString().split(",")[0]+"+09:00"
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocationTag(String locationTag) {
+        this.locationTag = locationTag;
+    }
 }

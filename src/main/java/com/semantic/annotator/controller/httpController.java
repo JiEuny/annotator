@@ -1,20 +1,18 @@
 package com.semantic.annotator.controller;
 
 import com.google.gson.*;
+import com.semantic.annotator.correlationSeeker.OffStreetParkingSeeker;
 import com.semantic.annotator.resource.AirQualityObserved;
 import com.semantic.annotator.resource.OffStreetParking;
 import com.semantic.annotator.resource.ParkingSpot;
+import com.semantic.annotator.resourceDTO.OffStreetParkingDTO;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
 
@@ -102,8 +100,13 @@ public class httpController {
 
 
 
+//        System.out.println(offStreetParkingList.get(0).getLocation().getValue().getType());
         System.out.println(offStreetParkingList.get(0).getOpeningHours().getValue());
 
+        OffStreetParkingSeeker correlationSeeker = new OffStreetParkingSeeker();
+        OffStreetParkingDTO mappedOffStreetParkingDTO = correlationSeeker.map(offStreetParkingList.get(0), OffStreetParkingDTO.class);
+//        OffStreetParking mappedOffStreetParking = correlationSeeker.map(mappedOffStreetParkingDTO, OffStreetParking.class);
+        System.out.println(mappedOffStreetParkingDTO);
 
         return "test";
     }
