@@ -1,6 +1,6 @@
 package com.semantic.annotator.resourceDTO;
 
-public class AirQualityObservedDTO {
+public class AirQualityForecastDTO {
 
     private String id;                  //getId()   
     private String estimatedValue1;     //getAirQualityPrediction().getValue(0)
