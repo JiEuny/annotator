@@ -12,6 +12,7 @@ public class AirQualityObserved {
     private AirQualityObservation airQualityObservation;
     private AirQualityIndexObservation airQualityIndexObservation;
 
+    //CHECK
     private class AirQualityObservation {
         private String observedAt;
         private String type;
@@ -87,6 +88,7 @@ public class AirQualityObserved {
         return location;
     }
 
+    //CHECK
     public class AirQualityIndexObservation {
         private String observedAt;
         private String type;
