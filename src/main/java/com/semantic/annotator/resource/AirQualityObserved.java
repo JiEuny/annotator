@@ -12,7 +12,7 @@ public class AirQualityObserved {
     private AirQualityObservation airQualityObservation;
     private AirQualityIndexObservation airQualityIndexObservation;
 
-    //
+    // CHECK
     private class AirQualityObservation {
         private String observedAt;
         private String type;
@@ -63,25 +63,25 @@ public class AirQualityObserved {
         return airQualityObservation;
     }
 
-    private class Location {
+    public class Location {
         private String type;
         private LocationValue value;
         public class LocationValue {
             private String type;
-            private Object coordinates;
-        
+            private Object[] coordinates;
+
             public String getType() {
                 return type;
             }
 
-            public Object getCoordinates() {
-                return coordinates;
+            public Object getCoordinates(int i) {
+                return coordinates[i];
             }
-       }
-
+        }
         public LocationValue getValue() {
             return value;
         }
+
     }
 
     public Location getLocation() {
@@ -146,7 +146,7 @@ public class AirQualityObserved {
     }
 
     public AirQualityIndexObservation getAirQualityIndexObservation() {
-        return airQualityIndexObservation
+        return airQualityIndexObservation;
     }
 
     public class IndexRef {
@@ -162,6 +162,7 @@ public class AirQualityObserved {
         return indexRef;
     }
 
+    // CHECK
     public class Address {
         private String type;
         private AddressValue value;
@@ -201,7 +202,7 @@ public class AirQualityObserved {
     public Address getAddress() {
         return address;
     }
-
+    // CHECK
     public Object getAddressCountry() {
         return address.value.addressCountry;
     }

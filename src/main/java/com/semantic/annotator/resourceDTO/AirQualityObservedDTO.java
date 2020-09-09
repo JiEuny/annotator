@@ -29,4 +29,7 @@ public class AirQualityObservedDTO {
     private String createdAt;       //offStreetParkingList.get(0).getCreatedAt().split(",")[0]+"+09:00"
     private String modifiedAt;      //getModifiedAt().split(",")[0]+"+09:00"
 
+    private String evaluatedOn1;    // getAirQualityObservation().getObservedAt()
+    private String evaluatedOn2;    // getAirQualityIndexObservation().getObservedAt()
+
 }
