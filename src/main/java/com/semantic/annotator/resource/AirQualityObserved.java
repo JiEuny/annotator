@@ -12,7 +12,7 @@ public class AirQualityObserved {
     private AirQualityObservation airQualityObservation;
     private AirQualityIndexObservation airQualityIndexObservation;
 
-    //CHECK
+    //
     private class AirQualityObservation {
         private String observedAt;
         private String type;
