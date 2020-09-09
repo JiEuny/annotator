@@ -4,7 +4,7 @@ public class WeatherForecastDTO {
 
     private String id;                          //getId()   
     private String estimatedValue;              //getWeatherPrediction().getValue(0)
-    private String weatherEvaluation;           //getWeatherPrediction().getValue(0)
+    private String evaluationValue;           //getWeatherPrediction().getValue(0)
     private String locationName1 = "addressCountry";
     private String addressCountry;              //getAddress().getValue().getAddressCountry()
     private String locationName2 = "addressRegion";
