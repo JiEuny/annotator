@@ -12,6 +12,47 @@ public class AirQualityObserved {
     private AirQualityObservation airQualityObservation;
     private AirQualityIndexObservation airQualityIndexObservation;
 
+    public String getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public class Location {
+        private String type;
+        private LocationValue value;
+        public class LocationValue {
+            private String type;
+            private Object[] coordinates;
+
+            public String getType() {
+                return type;
+            }
+
+            public Object getCoordinates(int i) {
+                return coordinates[i];
+            }
+        }
+        public LocationValue getValue() {
+            return value;
+        }
+
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
     // CHECK
     private class AirQualityObservation {
         private String observedAt;
@@ -63,56 +104,32 @@ public class AirQualityObserved {
         return airQualityObservation;
     }
 
-    public class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            private Object[] coordinates;
 
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates(int i) {
-                return coordinates[i];
-            }
-        }
-        public LocationValue getValue() {
-            return value;
-        }
-
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    //CHECK
+    //- CHECK
     public class AirQualityIndexObservation {
         private String observedAt;
         private String type;
         private AirQualityIndexObservationValue value;
         public class AirQualityIndexObservationValue {
-            private String pm10Category;
-            private String totalCategory;
             private Number totalIndex;
+            private String totalCategory;
+            private String pm10Category;
             private String o3Category;
             private String pm25Category;
             private String no2Category;
             private String coCategory;
             private String so2Category;
 
-            public String getPM10Category() {
-                return pm10Category;
+            public Number getTotalIndex() {
+                return totalIndex;
             }
 
             public String getTotalCategory() {
                 return totalCategory;
             }
 
-            public Number getTotalIndex() {
-                return totalIndex;
+            public String getPM10Category() {
+                return pm10Category;
             }
 
             public String getO3Category() {
@@ -162,7 +179,7 @@ public class AirQualityObserved {
         return indexRef;
     }
 
-    // CHECK
+    //- CHECK
     public class Address {
         private String type;
         private AddressValue value;
@@ -202,7 +219,7 @@ public class AirQualityObserved {
     public Address getAddress() {
         return address;
     }
-    // CHECK
+    //- CHECK
     public Object getAddressCountry() {
         return address.value.addressCountry;
     }
@@ -222,20 +239,5 @@ public class AirQualityObserved {
     public Object getAddressTown() {
         return address.value.addressTown;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
+    //- CHECK
 }

@@ -12,6 +12,47 @@ public class AirQualityForecast {
     private AirQualityPrediction airQualityPrediction;
     private AirQualityIndexPrediction airQualityIndexPredictionn;
 
+    public String getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public class Location {
+        private String type;
+        private LocationValue value;
+        public class LocationValue {
+            private String type;
+            private Object[] coordinates;
+
+            public String getType() {
+                return type;
+            }
+
+            public Object getCoordinates(int i) {
+                return coordinates[i];
+            }
+        }
+        public LocationValue getValue() {
+            return value;
+        }
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    //- CHECK
     private class AirQualityPrediction {
         private String observedAt;
         private String type;
@@ -59,32 +100,8 @@ public class AirQualityForecast {
         }
     }
 
-    public AirQualityPrediction getAirQualityPredictionn() {
+    public AirQualityPrediction getAirQualityPrediction() {
         return airQualityPrediction;
-    }
-
-    public class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            private Object[] coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates(int i) {
-                return coordinates[i];
-            }
-        }
-        public LocationValue getValue() {
-            return value;
-        }
-
-    }
-    public Location getLocation() {
-        return location;
     }
 
     public class AirQualityIndexPrediction {
@@ -149,7 +166,7 @@ public class AirQualityForecast {
     }
 
     public AirQualityIndexPrediction getAirQualityIndexPrediction() {
-        return airQualityIndexPredictionn;
+        return airQualityIndexPrediction;
     }
 
     public class IndexRef {
@@ -165,6 +182,7 @@ public class AirQualityForecast {
         return indexRef;
     }
 
+    //- CHECK
     public class Address {
         private String type;
         private AddressValue value;
@@ -205,7 +223,6 @@ public class AirQualityForecast {
         return address;
     }
 
-    // CHECK
     public Object getAddressCountry() {
         return address.value.addressCountry;
     }
@@ -225,20 +242,5 @@ public class AirQualityForecast {
     public Object getAddressTown() {
         return address.value.addressTown;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
+    //- CHECK
 }

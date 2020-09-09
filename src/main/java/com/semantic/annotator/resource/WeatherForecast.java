@@ -8,14 +8,55 @@ public class WeatherForecast {
     private Address address;
     private String createdAt;
     private String modifiedAt;
-    private WeatherForecast weatherForecast;
+    private WeatherPrediction weatherPrediction;
 
-    private class WeatherForecast {
+    public String getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+     public class Location {
+        private String type;
+        private LocationValue value;
+        public class LocationValue {
+            private String type;
+            private Object[] coordinates;
+
+            public String getType() {
+                return type;
+            }
+
+            public Object getCoordinates(int i) {
+                return coordinates[i];
+            }
+        }
+        public LocationValue getValue() {
+            return value;
+        }
+
+    }
+    
+    public Location getLocation() {
+        return location;
+    }
+
+    private class WeatherPrediction {
         private String observedAt;
         private String type;
-        private WeatherForecastValue[] value;
-        public class WeatherForecastValue {
-            private Number temparature;
+        private WeatherPredictionValue[] value;
+        public class WeatherPredictionValue {
+            private Number temperature;
             private Number lowestTemperature;
             private Number highestTemperature;
             private Number windSpeed;
@@ -27,7 +68,7 @@ public class WeatherForecast {
             private String predictedAt;
 
             public Number getTemparature() {
-                return temparature;
+                return temperature;
             }
 
             public Number getLowestTemperature() {
@@ -67,7 +108,7 @@ public class WeatherForecast {
             }
         }
 
-        public WeatherForecastValue getValue(int i) {
+        public WeatherPredictionValue getValue(int i) {
             return value[i];
         }
 
@@ -76,34 +117,11 @@ public class WeatherForecast {
         }
     }
 
-    public WeatherForecast getWeatherForecast() {
-        return weatherForecast;
+    public WeatherPrediction getWeatherPrediction() {
+        return weatherPrediction;
     }
 
-    public class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            private Object[] coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates(int i) {
-                return coordinates[i];
-            }
-        }
-        public LocationValue getValue() {
-            return value;
-        }
-
-    }
-    public Location getLocation() {
-        return location;
-    }
-
+    //- CHECK
     public class Address {
         private String type;
         private AddressValue value;
@@ -144,19 +162,24 @@ public class WeatherForecast {
         return address;
     }
 
-    public String getId() {
-        return id;
+    public Object getAddressCountry() {
+        return address.value.addressCountry;
     }
 
-    public String getType() {
-        return type;
+    public Object getAddressRegion() {
+        return address.value.addressRegion;
     }
 
-    public String getModifiedAt() {
-        return modifiedAt;
+    public Object getAddressLocality() {
+        return address.value.addressLocality;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public Object getStreetAddress() {
+        return address.value.streetAddress;
     }
+
+    public Object getAddressTown() {
+        return address.value.addressTown;
+    }
+    //- CHECK
 }
