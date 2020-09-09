@@ -1,19 +1,14 @@
 package com.semantic.annotator.resource;
 
-public class ParkingSpot {
+public class WeatherObserved {
 
     private String id;
     private String type;
     private String createdAt;
     private String modifiedAt;
-    private Name name;
     private Location location;
     private Address address;
-    private Category category;
-    private Width width;
-    private Length length;
-    private Status status;
-    private RefParkingLot refParkingLot;
+    private WeatherObservation weatherObservation;
 
     public String getId() {
         return id;
@@ -31,22 +26,11 @@ public class ParkingSpot {
         return modifiedAt;
     }
 
-    public class Name {
-        private String type;
-        private String value;
-
-        public String getValue() {
-            return value;
-        }
-    }
-
-    public Name getName() {
-        return name;
-    }
-
     private class Location {
         private String type;
         private LocationValue value;
+        private String observedAt;
+
         public class LocationValue {
             private String type;
             //CHECK Latitute, Longitute
@@ -61,8 +45,16 @@ public class ParkingSpot {
             }
         }
 
+        public String getType() {
+            return type;
+        }
+
         public LocationValue getValue() {
             return value;
+        }
+
+        public String getObservedAt() {
+            return observedAt;
         }
     }
 
@@ -130,63 +122,59 @@ public class ParkingSpot {
     }
     //-- CHECK
 
-    public class Category {
+    public static class WeatherObservation {
         private String type;
-
-        private Object[] value;
-        public Object getValue(int i) {
-            return value[i];
-        }
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public class Width {
-        private String type;
-        private Number value;
-
-        public String getType() {
-            return type;
-        }
-
-        public Number getValue() {
-            return value;
-        }
-    }
-
-    public Width getWidth() {
-        return width;
-    }
-
-    public class Length {
-        private String type;
-        private Number value;
-
-        public String getType() {
-            return type;
-        }
-
-        public Number getValue() {
-            return value;
-        }
-    }
-
-    public Length getLength() {
-        return length;
-    }
-
-    private class Status {
-        private String type;
-        private String value;
+        private WeatherObservationValue value;
         private String observedAt;
 
+        private class WeatherObservationValue {
+            private Number temperature;
+            private Number windSpeed;
+            private Number humidity;
+            private Number rainfall;
+            private Number hourlyRainfall;
+            private String rainType;
+            private Number snowfall;
+            private Number visibility;
+
+            public Number getTemperature() {
+                return temperature;
+            }
+
+            public Number getWindSpeed() {
+                return windSpeed;
+            }
+
+            public Number getHumidity() {
+                return humidity;
+            }
+
+            public Number getRainfall() {
+                return rainfall;
+            }
+
+            public Number getHourlyRainfall() {
+                return hourlyRainfall;
+            }
+
+            public String getRainType() {
+                return rainType;
+            }
+
+            public Number getSnowfall() {
+                return snowfall;
+            }
+
+            public Number getVisibility() {
+                return visibility;
+            }
+        }
+
         public String getType() {
             return type;
         }
 
-        public String getValue() {
+        public WeatherObservationValue getValue() {
             return value;
         }
 
@@ -195,23 +183,7 @@ public class ParkingSpot {
         }
     }
 
-    public Status getStatus(){ return status; }
-
-    public class RefParkingLot {
-        private String type;
-        private String value;
-
-        public String getType() {
-            return type;
-        }
-
-        public String getValue() {
-            return value;
-        }
-    }
-
-    public RefParkingLot getRefParkingLot() {
-        return refParkingLot;
+    public WeatherObservation getWeatherObservation() {
+        return weatherObservation;
     }
 }
-

@@ -1,7 +1,5 @@
 package com.semantic.annotator.resourceDTO;
 
-import com.semantic.annotator.resource.ParkingSpot;
-
 public class ParkingSpotDTO {
     private String id;
     private String name;
