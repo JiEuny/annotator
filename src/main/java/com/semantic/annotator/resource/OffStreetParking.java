@@ -108,12 +108,12 @@ public class OffStreetParking {
     }
     public class RefParkingSpots {
         private String type;
-        private Object value;
+        private Object[] value;
 
     }
     public class OpeningHours {
         private String type;
-        private Object value;
+        private Object[] value;
 
         public Object getValue() {
             return value;
@@ -143,7 +143,7 @@ public class OffStreetParking {
         private CongestionIndexPredictionValue value;
         public class CongestionIndexPredictionValue {
             private Object[] predictedAt;
-            private Object index;
+            private Object[] index;
 
             public Object getPredictedAt(int i) {
                 return predictedAt[i];

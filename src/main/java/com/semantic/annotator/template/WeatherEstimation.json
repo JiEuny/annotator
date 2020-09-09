@@ -3,7 +3,6 @@
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEstimation",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherProperty",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation",
@@ -12,15 +11,12 @@
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
     "http:\/\/www.w3.org\/2006\/time#Instant",
     "http:\/\/www.w3.org\/2006\/time#Instant",
-    "http:\/\/www.w3.org\/2006\/time#Instant",
-    "http:\/\/www.w3.org\/2006\/time#Instant",
     "http:\/\/www.w3.org\/2006\/time#Instant"
   ],
   "individual-list":[
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEstimation_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherProperty_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_1",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_2",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_3",
@@ -29,9 +25,7 @@
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1",
     "http:\/\/www.w3.org\/2006\/time#Instant_1",
     "http:\/\/www.w3.org\/2006\/time#Instant_2",
-    "http:\/\/www.w3.org\/2006\/time#Instant_3",
-    "http:\/\/www.w3.org\/2006\/time#Instant_4",
-    "http:\/\/www.w3.org\/2006\/time#Instant_5"
+    "http:\/\/www.w3.org\/2006\/time#Instant_3"
   ],
   "object-properties":[
     {
@@ -45,29 +39,14 @@
       "range":"http:\/\/www.w3.org\/2006\/time#Instant_2"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEstimation_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#estimatedOn",
-      "range":"http:\/\/www.w3.org\/2006\/time#Instant_3"
-    },
-    {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherProperty_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#hasWeatherEvaluation",
       "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_1"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherProperty_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#hasWeatherEvaluation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2"
-    },
-    {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedOn",
-      "range":"http:\/\/www.w3.org\/2006\/time#Instant_4"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedOn",
-      "range":"http:\/\/www.w3.org\/2006\/time#Instant_5"
+      "range":"http:\/\/www.w3.org\/2006\/time#Instant_3"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_1",
@@ -95,37 +74,7 @@
       "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_5"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_1"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_2"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_3"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_4"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_5"
-    },
-    {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
       "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1"
     }
@@ -142,17 +91,7 @@
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEstimation_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasEstimatedValue",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasRecord",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#WeatherEvaluation_2",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasRecord",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
     },
@@ -233,16 +172,6 @@
     },
     {
       "domain":"http:\/\/www.w3.org\/2006\/time#Instant_3",
-      "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
-    },
-    {
-      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
-      "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
-    },
-    {
-      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_5",
       "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
     }

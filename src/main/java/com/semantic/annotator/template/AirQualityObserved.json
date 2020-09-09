@@ -13,7 +13,6 @@
     "http:\/\/www.w3.org\/2006\/time#Instant",
     "http:\/\/www.w3.org\/2006\/time#Instant",
     "http:\/\/www.w3.org\/2006\/time#Instant",
-    "http:\/\/www.w3.org\/2006\/time#Instant",
     "http:\/\/www.w3.org\/2006\/time#Instant"
   ],
   "individual-list":[
@@ -30,8 +29,7 @@
     "http:\/\/www.w3.org\/2006\/time#Instant_1",
     "http:\/\/www.w3.org\/2006\/time#Instant_2",
     "http:\/\/www.w3.org\/2006\/time#Instant_3",
-    "http:\/\/www.w3.org\/2006\/time#Instant_4",
-    "http:\/\/www.w3.org\/2006\/time#Instant_5"
+    "http:\/\/www.w3.org\/2006\/time#Instant_4"
   ],
   "object-properties":[
     {
@@ -43,11 +41,6 @@
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasDateModified",
       "range":"http:\/\/www.w3.org\/2006\/time#Instant_2"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#observedOn",
-      "range":"http:\/\/www.w3.org\/2006\/time#Instant_3"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityProperty_1",
@@ -62,12 +55,12 @@
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityEvaluation_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedOn",
-      "range":"http:\/\/www.w3.org\/2006\/time#Instant_4"
+      "range":"http:\/\/www.w3.org\/2006\/time#Instant_3"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityEvaluation_2",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedOn",
-      "range":"http:\/\/www.w3.org\/2006\/time#Instant_5"
+      "range":"http:\/\/www.w3.org\/2006\/time#Instant_4"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityEvaluation_1",
@@ -128,6 +121,16 @@
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityEvaluation_2",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#evaluatedForLocation",
       "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1"
+    },
+    {
+      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
+      "property":"http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityEvaluation_1"
+    },
+    {
+      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
+      "property":"http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityEvaluation_2"
     }
   ],
   "data-properties":[
@@ -145,11 +148,6 @@
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasObservedValue",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#hasAirQualityLevel",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#positiveInteger"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/air-quality#AirQualityObservation_1",
@@ -247,12 +245,12 @@
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
     },
     {
-      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
+      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_3",
       "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
     },
     {
-      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_5",
+      "domain":"http:\/\/www.w3.org\/2006\/time#Instant_4",
       "property":"http:\/\/www.w3.org\/2006\/time#inXSDDateTime",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
     }
