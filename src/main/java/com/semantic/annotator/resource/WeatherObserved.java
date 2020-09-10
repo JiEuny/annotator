@@ -1,7 +1,5 @@
 package com.semantic.annotator.resource;
 
-import com.semantic.annotator.resource.Address;
-
 public class WeatherObserved {
 
     private String id;
@@ -28,42 +26,9 @@ public class WeatherObserved {
         return modifiedAt;
     }
 
-    private class Location {
-        private String type;
-        private LocationValue value;
-        private String observedAt;
-
-        public class LocationValue {
-            private String type;
-            //CHECK Latitute, Longitute
-            private Object coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates() {
-                return coordinates;
-            }
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public LocationValue getValue() {
-            return value;
-        }
-
-        public String getObservedAt() {
-            return observedAt;
-        }
-    }
-
     public Location getLocation() {
         return location;
     }
-
 
     public Address getAddress() {
         return address;

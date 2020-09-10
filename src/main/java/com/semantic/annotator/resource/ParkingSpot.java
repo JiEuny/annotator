@@ -1,7 +1,5 @@
 package com.semantic.annotator.resource;
 
-import com.semantic.annotator.resource.Address;
-
 public class ParkingSpot {
 
     private String id;
@@ -44,28 +42,6 @@ public class ParkingSpot {
 
     public Name getName() {
         return name;
-    }
-
-    private class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            //CHECK Latitute, Longitute
-            private Object coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates() {
-                return coordinates;
-            }
-        }
-
-        public LocationValue getValue() {
-            return value;
-        }
     }
 
     public Location getLocation() {
