@@ -1,5 +1,7 @@
 package com.semantic.annotator.resource;
 
+import com.semantic.annotator.resource.Address;
+
 public class ParkingSpot {
 
     private String id;
@@ -70,65 +72,9 @@ public class ParkingSpot {
         return location;
     }
 
-    public class Address {
-        private String type;
-        private AddressValue value;
-        public class AddressValue {
-            private String addressCountry;
-            private String addressRegion;
-            private String addressLocality;
-            private String streetAddress;
-            private String addressTown;
-
-            public String getAddressCountry() {
-                return addressCountry;
-            }
-
-            public String getAddressRegion() {
-                return addressRegion;
-            }
-
-            public String getAddressLocality() {
-                return addressLocality;
-            }
-
-            public String getStreetAddress() {
-                return streetAddress;
-            }
-
-            public String getAddressTown() {
-                return addressTown;
-            }
-        }
-
-        public AddressValue getValue() { return value; }
-    }
-
     public Address getAddress() {
         return address;
     }
-
-    //- CHECK
-    public String getAddressCountry() {
-        return address.value.addressCountry;
-    }
-
-    public String getAddressRegion() {
-        return address.value.addressRegion;
-    }
-
-    public String getAddressLocality() {
-        return address.value.addressLocality;
-    }
-
-    public String getStreetAddress() {
-        return address.value.streetAddress;
-    }
-
-    public String getAddressTown() {
-        return address.value.addressTown;
-    }
-    //-- CHECK
 
     public class Category {
         private String type;
