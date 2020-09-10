@@ -3,8 +3,8 @@ package com.semantic.annotator.resourceDTO;
 public class ParkingSpotDTO {
     private String id;
     private String name;
-    private String createdat;
-    private String modifiedat;
+    private String createdAt;
+    private String modifiedAt;
 
     private String locationType;
     private Number locationLatitute;
@@ -35,12 +35,12 @@ public class ParkingSpotDTO {
         this.name = name;
     }
 
-    public void setCreatedat(String createdat) {
-        this.createdat = createdat;
+    public void setcreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public void setModifiedat(String modifiedat) {
-        this.modifiedat = modifiedat;
+    public void setmodifiedAt(String modifiedAt) {
+        this.modifiedAt = modifiedAt;
     }
 
     public void setLocationType(String locationType) {
