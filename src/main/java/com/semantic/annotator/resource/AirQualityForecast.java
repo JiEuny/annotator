@@ -10,7 +10,7 @@ public class AirQualityForecast {
     private String modifiedAt;
     private IndexRef indexRef;
     private AirQualityPrediction airQualityPrediction;
-    private AirQualityIndexPrediction airQualityIndexPredictionn;
+    private AirQualityIndexPrediction airQualityIndexPrediction;
 
     public String getId() {
         return id;
@@ -28,31 +28,14 @@ public class AirQualityForecast {
         return createdAt;
     }
 
-    public class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            private Object[] coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates(int i) {
-                return coordinates[i];
-            }
-        }
-        public LocationValue getValue() {
-            return value;
-        }
-    }
-
     public Location getLocation() {
         return location;
     }
 
-    //- CHECK
+    public Address getAddress() {
+        return address;
+    }
+
     private class AirQualityPrediction {
         private String observedAt;
         private String type;
@@ -64,7 +47,7 @@ public class AirQualityForecast {
             private Number so2;
             private Number pm10;
             private Number co;
-            private Number predictedAt;
+            private String predictedAt;
 
             public Number getNO2() {
                 return no2;
@@ -89,6 +72,10 @@ public class AirQualityForecast {
             public Number getCO() {
                 return co;
             }
+
+            public String getPredictedAt () {
+                return predictedAt;
+            }
         }
 
         public AirQualityPredictionValue getValue(int i) {
@@ -109,46 +96,46 @@ public class AirQualityForecast {
         private String type;
         private AirQualityIndexPredictionValue[] value;
         public class AirQualityIndexPredictionValue {
-            private String pm10Category;
-            private String totalCategory;
             private Number totalIndex;
-            private String o3Category;
-            private String pm25Category;
-            private String no2Category;
-            private String coCategory;
+            private String totalCategory;
             private String so2Category;
+            private String coCategory;
+            private String o3Category;
+            private String no2Category;
+            private String pm10Category;
+            private String pm25Category;
             private String predictedAt;
-
-            public String getPM10Category() {
-                return pm10Category;
-            }
-
-            public String getTotalCategory() {
-                return totalCategory;
-            }
 
             public Number getTotalIndex() {
                 return totalIndex;
             }
 
-            public String getO3Category() {
-                return o3Category;
+            public String getTotalCategory() {
+                return totalCategory;
             }
-
-            public String getPM25Category() {
-                return pm25Category;
-            }
-
-            public String getNO2Category() {
-                return no2Category;
+            
+            public String getSO2Category() {
+                return so2Category;
             }
 
             public String getCOCategory() {
                 return coCategory;
             }
 
-            public String getSO2Category() {
-                return so2Category;
+            public String getO3Category() {
+                return o3Category;
+            }
+
+            public String getNO2Category() {
+                return no2Category;
+            }
+
+            public String getPM10Category() {
+                return pm10Category;
+            }
+
+            public String getPM25Category() {
+                return pm25Category;
             }
 
             public String getPredictedAt() {
@@ -182,65 +169,4 @@ public class AirQualityForecast {
         return indexRef;
     }
 
-    //- CHECK
-    public class Address {
-        private String type;
-        private AddressValue value;
-        public class AddressValue {
-            private String addressCountry;
-            private String streetAddress;
-            private String addressLocality;
-            private String addressRegion;
-            private String addressTown;
-
-            public String getAddressCountry() {
-                return addressCountry;
-            }
-
-            public String getAddressRegion() {
-                return addressRegion;
-            }
-
-            public String getAddressLocality() {
-                return addressLocality;
-            }
-
-            public String getStreetAddress() {
-                return streetAddress;
-            }
-
-            public String getAddressTown() {
-                return addressTown;
-            }
-        }
-
-        public AddressValue getValue() {
-            return value;
-        }
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public Object getAddressCountry() {
-        return address.value.addressCountry;
-    }
-
-    public Object getAddressRegion() {
-        return address.value.addressRegion;
-    }
-
-    public Object getAddressLocality() {
-        return address.value.addressLocality;
-    }
-
-    public Object getStreetAddress() {
-        return address.value.streetAddress;
-    }
-
-    public Object getAddressTown() {
-        return address.value.addressTown;
-    }
-    //- CHECK
 }

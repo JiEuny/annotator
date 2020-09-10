@@ -28,32 +28,14 @@ public class AirQualityObserved {
         return createdAt;
     }
 
-    public class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            private Object[] coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates(int i) {
-                return coordinates[i];
-            }
-        }
-        public LocationValue getValue() {
-            return value;
-        }
-
-    }
-
     public Location getLocation() {
         return location;
     }
 
-    // CHECK
+    public Address getAddress() {
+        return address;
+    }
+
     private class AirQualityObservation {
         private String observedAt;
         private String type;
@@ -105,7 +87,6 @@ public class AirQualityObserved {
     }
 
 
-    //- CHECK
     public class AirQualityIndexObservation {
         private String observedAt;
         private String type;
@@ -178,66 +159,4 @@ public class AirQualityObserved {
     public IndexRef getIndexRef() {
         return indexRef;
     }
-
-    //- CHECK
-    public class Address {
-        private String type;
-        private AddressValue value;
-        public class AddressValue {
-            private String addressCountry;
-            private String streetAddress;
-            private String addressLocality;
-            private String addressRegion;
-            private String addressTown;
-
-            public String getAddressCountry() {
-                return addressCountry;
-            }
-
-            public String getAddressRegion() {
-                return addressRegion;
-            }
-
-            public String getAddressLocality() {
-                return addressLocality;
-            }
-
-            public String getStreetAddress() {
-                return streetAddress;
-            }
-
-            public String getAddressTown() {
-                return addressTown;
-            }
-        }
-
-        public AddressValue getValue() {
-            return value;
-        }
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-    //- CHECK
-    public Object getAddressCountry() {
-        return address.value.addressCountry;
-    }
-
-    public Object getAddressRegion() {
-        return address.value.addressRegion;
-    }
-
-    public Object getAddressLocality() {
-        return address.value.addressLocality;
-    }
-
-    public Object getStreetAddress() {
-        return address.value.streetAddress;
-    }
-
-    public Object getAddressTown() {
-        return address.value.addressTown;
-    }
-    //- CHECK
 }
