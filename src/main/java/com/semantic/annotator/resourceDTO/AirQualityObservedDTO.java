@@ -19,8 +19,8 @@ public class AirQualityObservedDTO {
     private String locationName5 = "addressTown";
     private String addressTown; 
     private String locationType;
-    private String latitute;     
-    private String longitude;    
+    private Number locationLatitute;
+    private Number locationLongitude;   
     private String modifiedAt;
     private String createdAt;
     private String observedAt1;         // getAirQualityObservation().getObservedAt()
@@ -94,12 +94,12 @@ public class AirQualityObservedDTO {
         this.locationType = locationType;
     }
     
-    public void setLatitute(String latitute) {
-        this.latitute = latitute;
+    public void setLocationLatitute(Number locationLatitute) {
+        this.locationLatitute = locationLatitute;
     }
-    
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+
+    public void setLocationLongitude(Number locationLongitude) {
+        this.locationLongitude = locationLongitude;
     }
     
     public void setModifiedAt(String modifiedAt) {
