@@ -2,11 +2,11 @@ package com.semantic.annotator.resourceDTO;
 
 public class AirQualityForecastDTO {
 
-    private String id;                          //getId()   
-    private String estimatedValue1;             //getAirQualityPrediction().getValue(0)
-    private String estimatedValue2;             //getAirQualityIndexPrediction().getValue(0)
-    private String evaluationValue1;            //getAirQualityPrediction().getValue(0)
-    private String evaluationValue2;            //getAirQualityIndexPrediction().getValue(0)
+    private String id;             
+    private String estimatedValue1;
+    private String estimatedValue2;
+    private String evaluationValue1;
+    private String evaluationValue2;
     //private String indexRef;               // template json 파일에 값 없음, Guideline page11 에 skipped 표시
     private String locationName1 = "addressCountry";
     private String addressCountry; 
