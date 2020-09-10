@@ -46,7 +46,7 @@ public class WeatherForecast {
             private Number humidity;
             private Number rainfall;
             private Number rainfallProbability;
-            private Number rainType;
+            private String rainType;
             private Number snowfall;
             private String predictedAt;
 
@@ -78,7 +78,7 @@ public class WeatherForecast {
                 return rainfallProbability;
             }
 
-            public Number getRainType() {
+            public String getRainType() {
                 return rainType;
             }
 

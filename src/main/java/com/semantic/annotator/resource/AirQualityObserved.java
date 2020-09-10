@@ -40,6 +40,8 @@ public class AirQualityObserved {
         private String observedAt;
         private String type;
         private AirQualityObservationValue value;
+        private String airQualityObservation;
+
         public class AirQualityObservationValue {
             private Number no2;
             private Number o3;
@@ -80,6 +82,10 @@ public class AirQualityObserved {
         public String getObservedAt () {
             return observedAt;
         }
+
+        public String getAirQualityObservation() {
+            return airQualityObservation;
+        }
     }
 
     public AirQualityObservation getAirQualityObservation() {
@@ -91,6 +97,8 @@ public class AirQualityObserved {
         private String observedAt;
         private String type;
         private AirQualityIndexObservationValue value;
+        private String airQualityIndexObservation;
+
         public class AirQualityIndexObservationValue {
             private Number totalIndex;
             private String totalCategory;
@@ -140,6 +148,10 @@ public class AirQualityObserved {
 
         public String getObservedAt() {
             return observedAt;
+        }
+
+        public String getAirQualityIndexObservation() {
+            return airQualityIndexObservation;
         }
     }
 
