@@ -39,6 +39,8 @@ public class AirQualityForecast {
     private class AirQualityPrediction {
         private String observedAt;
         private String type;
+        private String airQualityPrediction;
+
         private AirQualityPredictionValue[] value;
         public class AirQualityPredictionValue {
             private Number no2;
@@ -83,17 +85,23 @@ public class AirQualityForecast {
         }
 
         public String getObservedAt () {
-            return observedAt;
+            return observedAt;   
         }
-    }
 
-    public AirQualityPrediction getAirQualityPrediction() {
-        return airQualityPrediction;
+        public String getAirQualityObservation() {
+            return airQualityObservation;
+        }
+
+        public AirQualityPrediction getAirQualityPrediction() {
+            return airQualityPrediction;
+        }
     }
 
     public class AirQualityIndexPrediction {
         private String observedAt;
         private String type;
+        private String airQualityIndexPrediction;
+
         private AirQualityIndexPredictionValue[] value;
         public class AirQualityIndexPredictionValue {
             private Number totalIndex;
@@ -149,6 +157,10 @@ public class AirQualityForecast {
 
         public String getObservedAt() {
             return observedAt;
+        }
+
+        public String getAirQualityIndexPrediction() {
+            return airQualityIndexPrediction;
         }
     }
 

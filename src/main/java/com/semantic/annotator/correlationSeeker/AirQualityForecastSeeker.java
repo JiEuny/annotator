@@ -1,17 +1,17 @@
 package com.semantic.annotator.correlationSeeker;
 
-import com.semantic.annotator.resource.AirQualityObserved;
-import com.semantic.annotator.resourceDTO.AirQualityObservedDTO;
+import com.semantic.annotator.resource.AirQualityForecast;
+import com.semantic.annotator.resourceDTO.AirQualityForecastDTO;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 
-public class AirQualityObservedSeeker {
+public class AirQualityForecastSeeker {
 
     private MapperFactory mapperFactory;
 
-    public AirQualityObservedSeeker() {
+    public AirQualityForecastSeeker() {
         this.mapperFactory = new DefaultMapperFactory.Builder().build();
-        this.mapperFactory.classMap(AirQualityObserved.class, AirQualityObservedDTO.class).
+        this.mapperFactory.classMap(AirQualityForecast.class, AirQualityForecastDTO.class).
                 mapNulls(false).
                 mapNullsInReverse(false).
                 byDefault().
@@ -24,16 +24,18 @@ public class AirQualityObservedSeeker {
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
 
-                field("airQualityObservation.airQualityObservation", "observedValue1").
-                field("airQualityIndexObservation.airQualityIndexObservation", "observedValue2").
-                field("indexRef.value", "indexRef").
-                field("airQualityObservation.airQualityObservation", "evaluationValue1").
-                field("airQualityIndexObservation.airQualityIndexObservation", "evaluationValue2").
-                field("airQualityObservation.observedAt","observedAt1").
-                field("airQualityIndexObservation.observedAt","observedAt2").
+                field("airQualityPrediction.airQualityPrediction", "estimatedValue1").
+                field("airQualityIndexPrediction.airQualityIndexPrediction", "estimatedValue2").
+
+                field("airQualityPrediction.airQualityPrediction", "evaluationValue1").
+                field("airQualityIndexPrediction.airQualityIndexPrediction", "evaluationValue2").
+
+                field("airQualityPrediction.observedAt","observedAt1").
+                field("airQualityIndexPrediction.observedAt","observedAt2").
                 register();
 
-                // CHECK : mapping string type , observedValue1, observedValue2, evaluationValue1, evaluationValue2
+                // CHECK : mapping string type , estimatedValue1, estimatedValue2, evaluationValue1, evaluationValue2
+
     }
 
     public <S, D> D map(S s, Class<D> type) {
