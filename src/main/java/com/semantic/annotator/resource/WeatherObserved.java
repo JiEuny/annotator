@@ -39,6 +39,7 @@ public class WeatherObserved {
         private WeatherObservationValue value;
         private String observedAt;
         private String weatherObservation;
+        private String weatherEvaluationHasRecord;
 
         private class WeatherObservationValue {
             private Number temperature;
@@ -97,6 +98,10 @@ public class WeatherObserved {
 
         public String getWeatherObservation() {
             return weatherObservation;
+        }
+
+        public String getWeatherEvaluationHasRecord() {
+            return weatherEvaluationHasRecord;
         }
     }
 

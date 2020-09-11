@@ -22,6 +22,7 @@ public class WeatherObservedSeeker {
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
                 field("weatherObservation.weatherObservation","weatherObservation").
+                field("weatherObservation.weatherEvaluationHasRecord","weatherEvaluationHasRecord").
                 field("weatherObservation.observedAt","observedAt").
                 byDefault().
                 register();

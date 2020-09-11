@@ -37,6 +37,11 @@ public class WeatherForecast {
     private class WeatherPrediction {
         private String observedAt;
         private String type;
+
+        //CHECK
+        private String estimatedValue;
+        private String evaluationValue;
+
         private WeatherPredictionValue[] value;
         public class WeatherPredictionValue {
             private Number temperature;
@@ -97,6 +102,14 @@ public class WeatherForecast {
 
         public String getObservedAt () {
             return observedAt;
+        }
+
+        public String getEstimatedValue() {
+            return estimatedValue;
+        }
+
+        public String getEvaluationValue() {
+            return evaluationValue;
         }
     }
 
