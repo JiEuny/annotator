@@ -99,7 +99,7 @@ public class ParkingSpot {
         return length;
     }
 
-    private class Status {
+    public class Status {
         private String type;
         private String value;
         private String observedAt;
