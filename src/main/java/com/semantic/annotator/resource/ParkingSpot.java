@@ -54,11 +54,12 @@ public class ParkingSpot {
 
     public class Category {
         private String type;
-
         private Object[] value;
-        public Object getValue(int i) {
-            return value[i];
+
+        public Object[] getValue() {
+            return value;
         }
+
     }
 
     public Category getCategory() {
@@ -67,13 +68,13 @@ public class ParkingSpot {
 
     public class Width {
         private String type;
-        private Number value;
+        private String value;
 
-        public String getType() {
-            return type;
-        }
+//        public String getType() {
+//            return type;
+//        }
 
-        public Number getValue() {
+        public String getValue() {
             return value;
         }
     }
@@ -84,13 +85,13 @@ public class ParkingSpot {
 
     public class Length {
         private String type;
-        private Number value;
+        private String value;
 
-        public String getType() {
-            return type;
-        }
+//        public String getType() {
+//            return type;
+//        }
 
-        public Number getValue() {
+        public String getValue() {
             return value;
         }
     }
@@ -102,19 +103,19 @@ public class ParkingSpot {
     public class Status {
         private String type;
         private String value;
-        private String observedAt;
+//        private String observedAt;
 
-        public String getType() {
-            return type;
-        }
+//        public String getType() {
+//            return type;
+//        }
 
         public String getValue() {
             return value;
         }
 
-        public String getObservedAt() {
-            return observedAt;
-        }
+//        public String getObservedAt() {
+//            return observedAt;
+//        }
     }
 
     public Status getStatus(){ return status; }
@@ -123,9 +124,9 @@ public class ParkingSpot {
         private String type;
         private String value;
 
-        public String getType() {
-            return type;
-        }
+//        public String getType() {
+//            return type;
+//        }
 
         public String getValue() {
             return value;

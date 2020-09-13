@@ -8,23 +8,14 @@ public class Location {
     public class LocationValue {
         //Point, MultiPolygon
         private String type;
-        private LocationCoordinate[] coordinates;
+        private String coordinates[];
 
-        private class LocationCoordinate {
-            private Number latitude;
-            private Number longitude;
+        public String[] getCoordinates() {
+            return coordinates;
         }
 
         public String getType() {
             return type;
-        }
-
-        public LocationCoordinate[] getCoordinates() {
-            return coordinates;
-        }
-
-        public LocationCoordinate getCoordinates(int index) {
-            return coordinates[index];
         }
     }
 

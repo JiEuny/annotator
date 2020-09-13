@@ -31,7 +31,6 @@ public class OffStreetParking {
 //    private String observedAt;
 //    private List<String> context;
 
-
     public String getModifiedAt() {
         return modifiedAt;
     }
@@ -48,69 +47,55 @@ public class OffStreetParking {
         return location;
     }
 
-    public class Location {
-        private String type;
-        private LocationValue value;
-        public class LocationValue {
-            private String type;
-            private Object[] coordinates;
-
-            public String getType() {
-                return type;
-            }
-
-            public Object getCoordinates(int i) {
-                return coordinates[i];
-            }
-        }
-        public LocationValue getValue() {
-            return value;
-        }
-
-    }
-
     public String getType() {
         return type;
     }
     public class Status {
         private String type;
         private Object[] value;
-        public Object getValue(int i) {
-            return value[i];
-        }
 
-    }
-    public class TotalSpotNumber {
-        private String type;
-
-        private Number value;
-        public Number getValue() {
+        public Object[] getValue() {
             return value;
         }
 
     }
 
+    public class TotalSpotNumber {
+        private String type;
+
+        private String value;
+        public String getValue() {
+            return value;
+        }
+
+    }
     public TotalSpotNumber getTotalSpotNumber() {
         return totalSpotNumber;
     }
+
     public class Category {
         private String type;
-
         private Object[] value;
+
+        public Object[] getValue() {
+            return value;
+        }
+
         public Object getValue(int i) {
             return value[i];
         }
 
     }
-
     public Category getCategory() {
         return category;
     }
+
     public class RefParkingSpots {
         private String type;
         private Object[] value;
 
     }
+
     public class OpeningHours {
         private String type;
         private Object[] value;
@@ -119,7 +104,6 @@ public class OffStreetParking {
             return value;
         }
     }
-
     public OpeningHours getOpeningHours() {
         return openingHours;
     }
@@ -132,7 +116,6 @@ public class OffStreetParking {
             return value;
         }
     }
-
     public Name getName() {
         return name;
     }
@@ -143,14 +126,14 @@ public class OffStreetParking {
         private CongestionIndexPredictionValue value;
         public class CongestionIndexPredictionValue {
             private Object[] predictedAt;
-            private Object[] index;
-
-            public Object getPredictedAt(int i) {
-                return predictedAt[i];
-            }
+            private Object index;
 
             public Object getIndex() {
                 return index;
+            }
+
+            public Object[] getPredictedAt() {
+                return predictedAt;
             }
         }
 
@@ -158,20 +141,18 @@ public class OffStreetParking {
             return value;
         }
     }
-
     public CongestionIndexPrediction getCongestionIndexPrediction() {
         return congestionIndexPrediction;
     }
 
     public class AvailableSpotNumber {
         private String type;
-        private Number value;
+        private String value;
 
-        public Number getValue() {
+        public String getValue() {
             return value;
         }
     }
-
     public AvailableSpotNumber getAvailableSpotNumber() {
         return availableSpotNumber;
     }
@@ -179,6 +160,10 @@ public class OffStreetParking {
     public class PriceCurrency {
         private String type;
         private Object[] value;
+
+        public Object[] getValue() {
+            return value;
+        }
 
         public Object getValue(int i) {
             return value[i];
@@ -190,18 +175,23 @@ public class OffStreetParking {
         private String type;
         private Object[] value;
 
+        public Object[] getValue() {
+            return value;
+        }
+
         public Object getValue(int i) {
             return value[i];
         }
     }
-
     public PaymentAccepted getPaymentAccepted() {
         return paymentAccepted;
     }
 
-    public PriceCurrency getPriceCurrency() {
+    public PriceCurrency getPriceCurrency()
+    {
         return priceCurrency;
     }
+
     public class LocationTag {
         private String type;
 
@@ -211,10 +201,10 @@ public class OffStreetParking {
         }
 
     }
-
     public LocationTag getLocationTag() {
         return locationTag;
     }
+
     public class ContactPoint {
         private String type;
         private ContactPointValue value;
@@ -241,50 +231,14 @@ public class OffStreetParking {
         }
 
     }
-
     public ContactPoint getContactPoint() {
         return contactPoint;
-    }
-    public class Address {
-        private String type;
-        private AddressValue value;
-        public class AddressValue {
-            private String addressCountry;
-            private String addressRegion;
-            private String addressLocality;
-            private String streetAddress;
-
-            private String addressTown;
-
-            public String getAddressCountry() {
-                return addressCountry;
-            }
-
-            public String getAddressRegion() {
-                return addressRegion;
-            }
-
-            public String getAddressLocality() {
-                return addressLocality;
-            }
-
-            public String getStreetAddress() {
-                return streetAddress;
-            }
-            public String getAddressTown() {
-                return addressTown;
-            }
-
-        }
-        public AddressValue getValue() {
-            return value;
-        }
-
     }
 
     public Address getAddress() {
         return address;
     }
+
     public class PriceRate {
         private String type;
 
@@ -294,10 +248,10 @@ public class OffStreetParking {
         }
 
     }
-
     public PriceRate getPriceRate() {
         return priceRate;
     }
+
     public class Image {
         private String type;
 
@@ -307,7 +261,6 @@ public class OffStreetParking {
         }
 
     }
-
     public Image getImage() {
         return image;
     }

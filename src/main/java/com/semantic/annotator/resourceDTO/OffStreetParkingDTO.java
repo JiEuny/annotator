@@ -3,64 +3,37 @@ package com.semantic.annotator.resourceDTO;
 public class OffStreetParkingDTO {
 
     private String id;
-    private String name;        //getName().getValue()
-    private String locationTag;     //getLocationTag().getValue()
-    private String category0;      //getCategory().getValue(0)
-    private String category1;      //getCategory().getValue(1)
-    private Number totalSpotNumber;     //getTotalSpotNumber().getValue()
-    private Number availableSpotNumber;     //getAvailableSpotNumber().getValue()
-    private String status0;      //getStatus().getValue(0)
-    private String status1;      //getStatus().getValue(1)
-    private String telephone;       //getContactPoint().getValue().getTelephone()
-    private String email;       //getContactPoint().getValue().getEmail()
-    private String contactType;     //getContactPoint().getValue().getContactType()
-    private String paymentType0;    //getPaymentAccepted().getValue(0)
-    private String paymentType1;    //getPaymentAccepted().getValue(1)
-    private String priceRate;       //getPriceRate().getValue()
-    private String priceCurrency;        //getPriceCurrency().getValue(0)
-    private String image;       //getImage().getValue()
-    private String locationType1_1;      //getLocation().getValue().getType()
-    private String latitute1_1;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[5]
-    private String longitude1_1;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[3]
-    private String locationType1_2;      //getLocation().getValue().getType()
-    private String latitute1_2;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[11]
-    private String longitude1_2;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[9]
-    private String locationType1_3;      //getLocation().getValue().getType()
-    private String latitute1_3;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[17]
-    private String longitude1_3;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[15]
-    private String locationType1_4;      //getLocation().getValue().getType()
-    private String latitute1_4;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[23]
-    private String longitude1_4;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[21]
-    private String locationType1_5;      //getLocation().getValue().getType()
-    private String latitute1_5;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[29]
-    private String longitude1_5;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[27]
-    private String locationType2_1;      //getLocation().getValue().getType()
-    private String latitute2_1;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[37]
-    private String longitude2_1;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[35]
-    private String locationType2_2;      //getLocation().getValue().getType()
-    private String latitute2_2;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[43]
-    private String longitude2_2;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[41]
-    private String locationType2_3;      //getLocation().getValue().getType()
-    private String latitute2_3;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[49]
-    private String longitude2_3;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[47]
-    private String locationType2_4;      //getLocation().getValue().getType()
-    private String latitute2_4;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[55]
-    private String longitude2_4;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[53]
-    private String locationType2_5;      //getLocation().getValue().getType()
-    private String latitute2_5;     //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[61]
-    private String longitude2_5;    //getLocation().getValue().getCoordinates(0).toString().replace('[', ' ').replace(']', ' ').split(" |,")[59]
+    private String name;
+    private String locationTag;
+    private String category0;
+    private String category1;
+    private String  totalSpotNumber;
+    private String availableSpotNumber;
+    private String status0;
+    private String status1;
+    private String telephone;
+    private String email;
+    private String contactType;
+    private String paymentType0;
+    private String paymentType1;
+    private String priceRate;
+    private String priceCurrency;
+    private String image;
+    private String locationType;
+    private String latitute;
+    private String longitude;
     private String locationName1 = "addressCountry";
-    private String addressCountry;      //getAddress().getValue().getAddressCountry()
+    private String addressCountry;
     private String locationName2 = "addressRegion";
-    private String addressRegion;       //getAddress().getValue().getAddressRegion()
+    private String addressRegion;
     private String locationName3 = "addressLocality";
-    private String addressLocality;     //getAddress().getValue().getAddressLocality()
+    private String addressLocality;
     private String locationName4 = "streetAddress";
-    private String streetAddress;       //getAddress().getValue().getStreetAddress()
+    private String streetAddress;
     private String locationName5 = "addressTown";
-    private String addressTown;     //getAddress().getValue().getAddressTown()
-    private String createdAt;       //offStreetParkingList.get(0).getCreatedAt().split(",")[0]+"+09:00"
-    private String modifiedAt;      //getModifiedAt().split(",")[0]+"+09:00"
+    private String addressTown;
+    private String createdAt;
+    private String modifiedAt;
     private String openingHours = "1111-11-11T00:00:00";
     private String endingHours = "1111-11-11T23:59:59";
     private String openingType = "OpeningHours";
@@ -78,5 +51,109 @@ public class OffStreetParkingDTO {
 
     public void setLocationTag(String locationTag) {
         this.locationTag = locationTag;
+    }
+
+    public void setCategory0(String category0) {
+        this.category0 = category0;
+    }
+
+    public void setCategory1(String category1) {
+        this.category1 = category1;
+    }
+
+    public void setTotalSpotNumber(String  totalSpotNumber) {
+        this.totalSpotNumber = totalSpotNumber;
+    }
+
+    public void setAvailableSpotNumber(String availableSpotNumber) {
+        this.availableSpotNumber = availableSpotNumber;
+    }
+
+    public void setStatus0(String status0) {
+        this.status0 = status0;
+    }
+
+    public void setStatus1(String status1) {
+        this.status1 = status1;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setContactType(String contactType) {
+        this.contactType = contactType;
+    }
+
+    public void setPaymentType0(String paymentType0) {
+        this.paymentType0 = paymentType0;
+    }
+
+    public void setPaymentType1(String paymentType1) {
+        this.paymentType1 = paymentType1;
+    }
+
+    public void setPriceRate(String priceRate) {
+        this.priceRate = priceRate;
+    }
+
+    public void setPriceCurrency(String priceCurrency) {
+        this.priceCurrency = priceCurrency;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setLocationType(String locationType) {
+        this.locationType = locationType;
+    }
+
+    public void setLatitute(String latitute) {
+        this.latitute = latitute;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setAddressCountry(String addressCountry) {
+        this.addressCountry = addressCountry;
+    }
+
+    public void setAddressRegion(String addressRegion) {
+        this.addressRegion = addressRegion;
+    }
+
+    public void setAddressLocality(String addressLocality) {
+        this.addressLocality = addressLocality;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public void setAddressTown(String addressTown) {
+        this.addressTown = addressTown;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt.split(",")[0]+"+09:00";
+    }
+
+    public void setModifiedAt(String modifiedAt) {
+        this.modifiedAt = modifiedAt.split(",")[0]+"+09:00";
+    }
+
+    public void setEstimatedValue(String estimatedValue) {
+        this.estimatedValue = estimatedValue.toString();
+    }
+
+    public void setPredictedAt(String predictedAt) {
+        this.predictedAt = predictedAt.split(",")[0]+"+09:00";
     }
 }

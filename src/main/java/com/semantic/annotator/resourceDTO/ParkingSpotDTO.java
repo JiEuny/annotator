@@ -7,8 +7,8 @@ public class ParkingSpotDTO {
     private String modifiedAt;
 
     private String locationType;
-    private Number locationLatitute;
-    private Number locationLongitude;
+    private String  latitute;
+    private String longitude;
 
     private String addressName1 = "addressCountry";
     private String addressCountry;      //getAddress().getValue().getAddressCountry()
@@ -24,8 +24,8 @@ public class ParkingSpotDTO {
     private String category;
     private String refParkingLot;
     private String status;
-    private Number width;
-    private Number length;
+    private String width;
+    private String length;
 
     public void setId(String id) {
         this.id = id;
@@ -36,23 +36,23 @@ public class ParkingSpotDTO {
     }
 
     public void setcreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.createdAt = createdAt.split(",")[0]+"+09:00";
     }
 
     public void setmodifiedAt(String modifiedAt) {
-        this.modifiedAt = modifiedAt;
+        this.modifiedAt = modifiedAt.split(",")[0]+"+09:00";
     }
 
     public void setLocationType(String locationType) {
         this.locationType = locationType;
     }
 
-    public void setLocationLatitute(Number locationLatitute) {
-        this.locationLatitute = locationLatitute;
+    public void setLatitute(String latitute) {
+        this.latitute = latitute;
     }
 
-    public void setLocationLongitude(Number locationLongitude) {
-        this.locationLongitude = locationLongitude;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public void setAddressName1(String addressName1) {
@@ -107,11 +107,11 @@ public class ParkingSpotDTO {
         this.status = status;
     }
 
-    public void setWidth(Number width) {
+    public void setWidth(String width) {
         this.width = width;
     }
 
-    public void setLength(Number length) {
+    public void setLength(String length) {
         this.length = length;
     }
 }

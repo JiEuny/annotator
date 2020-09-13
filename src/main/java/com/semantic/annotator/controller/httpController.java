@@ -1,11 +1,15 @@
 package com.semantic.annotator.controller;
 
 import com.google.gson.*;
+import com.semantic.annotator.correlationSeeker.AirQualityObservedSeeker;
 import com.semantic.annotator.correlationSeeker.OffStreetParkingSeeker;
+import com.semantic.annotator.correlationSeeker.ParkingSpotSeeker;
 import com.semantic.annotator.resource.AirQualityObserved;
 import com.semantic.annotator.resource.OffStreetParking;
 import com.semantic.annotator.resource.ParkingSpot;
+import com.semantic.annotator.resourceDTO.AirQualityObservedDTO;
 import com.semantic.annotator.resourceDTO.OffStreetParkingDTO;
+import com.semantic.annotator.resourceDTO.ParkingSpotDTO;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -101,12 +105,29 @@ public class httpController {
 
 
 //        System.out.println(offStreetParkingList.get(0).getLocation().getValue().getType());
-        System.out.println(offStreetParkingList.get(0).getOpeningHours().getValue());
+//        System.out.println(offStreetParkingList.get(0).getLocation().getValue().getCoordinates());
+
+//        String tests = offStreetParkingList.get(0).getLocation().getValue().getCoordinates().toString();
+//        String[] test2 = tests.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(" ", "").split(",");
+//        for(int i=0; i<test2.length;i++){
+//            System.out.println(test2[i]);
+//        }
+
+//        System.out.println(offStreetParkingList.get(0).getLocation().getValue().getLatitude());
+        System.out.println(airQualityObservedList.get(0).getAirQualityObservation().getValue().toString());
 
         OffStreetParkingSeeker correlationSeeker = new OffStreetParkingSeeker();
         OffStreetParkingDTO mappedOffStreetParkingDTO = correlationSeeker.map(offStreetParkingList.get(0), OffStreetParkingDTO.class);
 //        OffStreetParking mappedOffStreetParking = correlationSeeker.map(mappedOffStreetParkingDTO, OffStreetParking.class);
         System.out.println(mappedOffStreetParkingDTO);
+
+        ParkingSpotSeeker spotSeeker = new ParkingSpotSeeker();
+        ParkingSpotDTO mappedParkingSpotDTO = spotSeeker.map(parkingSpotList.get(0), ParkingSpotDTO.class);
+        System.out.println(mappedParkingSpotDTO);
+
+        AirQualityObservedSeeker airQualityObservedSeeker = new AirQualityObservedSeeker();
+        AirQualityObservedDTO mappedAirObservedDTO = airQualityObservedSeeker.map(airQualityObservedList.get(0), AirQualityObservedDTO.class);
+        System.out.println(mappedAirObservedDTO);
 
         return "test";
     }

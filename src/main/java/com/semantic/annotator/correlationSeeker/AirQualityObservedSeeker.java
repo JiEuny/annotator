@@ -15,25 +15,26 @@ public class AirQualityObservedSeeker {
                 mapNulls(false).
                 mapNullsInReverse(false).
                 byDefault().
-                field("location.type", "locationType").
-                field("location.value.coordinates[0].latitude", "locationLatitute").
-                field("location.value.coordinates[0].longitude", "locationLongitude").
+                field("airQualityObservation.value", "observedValue1").
+                field("airQualityIndexObservation.value", "observedValue2").
+                field("indexRef.value", "indexRef").
+                field("airQualityObservation.value", "evaluationValue1").
+                field("airQualityIndexObservation.value", "evaluationValue2").
                 field("address.value.addressCountry", "addressCountry").
                 field("address.value.addressRegion", "addressRegion").
                 field("address.value.addressLocality", "addressLocality").
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
+                field("location.value.type","locationType").
+                field("location.value.coordinates[0]","latitute").
+                field("location.value.coordinates[1]","longitude").
 
-                field("airQualityObservation.airQualityObservation", "observedValue1").
-                field("airQualityIndexObservation.airQualityIndexObservation", "observedValue2").
-                field("indexRef.value", "indexRef").
-                field("airQualityObservation.airQualityObservation", "evaluationValue1").
-                field("airQualityIndexObservation.airQualityIndexObservation", "evaluationValue2").
                 field("airQualityObservation.observedAt","observedAt1").
                 field("airQualityIndexObservation.observedAt","observedAt2").
                 register();
-
-                // CHECK : mapping string type , observedValue1, observedValue2, evaluationValue1, evaluationValue2
+        
+       // CHECK
+       // DTO : evaluationValue1, evaluationValue2
     }
 
     public <S, D> D map(S s, Class<D> type) {

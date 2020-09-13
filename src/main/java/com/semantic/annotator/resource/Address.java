@@ -11,23 +11,23 @@ public class Address {
         private String streetAddress;
         private String addressTown;
 
-        public String getCountry() {
+        public String getAddressCountry() {
             return addressCountry;
         }
 
-        public String getRegion() {
+        public String getAddressRegion() {
             return addressRegion;
         }
 
-        public String getLocality() {
+        public String getAddressLocality() {
             return addressLocality;
         }
 
-        public String getStreet() {
+        public String getStreetAddress() {
             return streetAddress;
         }
 
-        public String getTown() {
+        public String getAddressTown() {
             return addressTown;
         }
     }
@@ -41,23 +41,23 @@ public class Address {
         return value;
     }
 
-    public String getAddressCountry(){
-        return value.addressCountry;
-    }
-
-    public String getAddressRegion() {
-        return value.addressRegion;
-    }
-
-    public String getAddressLocality() {
-        return value.addressLocality;
-    }
-
-    public String getStreetAddress() {
-        return value.streetAddress;
-    }
-
-    public String getAddressTown() {
-        return value.addressTown;
-    }
+//    public String getAddressCountry(){
+//        return value.addressCountry;
+//    }
+//
+//    public String getAddressRegion() {
+//        return value.addressRegion;
+//    }
+//
+//    public String getAddressLocality() {
+//        return value.addressLocality;
+//    }
+//
+//    public String getStreetAddress() {
+//        return value.streetAddress;
+//    }
+//
+//    public String getAddressTown() {
+//        return value.addressTown;
+//    }
 }

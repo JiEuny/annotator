@@ -6,15 +6,6 @@
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#AvailableParkingSpots",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#State",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation",
@@ -41,16 +32,7 @@
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLotProfile_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#AvailableParkingSpots_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#State_1",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_1",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_2",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_3",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_4",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_5",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_1",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_2",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_3",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_4",
-    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_5",
+    "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_1",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_2",
     "http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#ZoneBasedLocation_3",
@@ -101,52 +83,7 @@
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_1"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_2"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_3"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_4"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_5"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_1"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_2"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_3"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_4"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#isLocatedAt",
-      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_5"
+      "range":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1"
     },
     {
       "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/parking#ParkingLot_1",
@@ -366,152 +303,17 @@
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_1",
+      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_1",
+      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
     },
     {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_3",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_3",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_3",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_4",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_4",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_4",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_5",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_5",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1_5",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_1",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_2",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_3",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_3",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_3",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_4",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_4",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_4",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_5",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasType",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#string"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_5",
-      "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLatitute",
-      "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
-    },
-    {
-      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_2_5",
+      "domain":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#GeoProperty_1",
       "property":"http:\/\/www.city-hub.kr\/ontologies\/2019\/1\/common#hasLongitude",
       "range":"http:\/\/www.w3.org\/2001\/XMLSchema#double"
     },

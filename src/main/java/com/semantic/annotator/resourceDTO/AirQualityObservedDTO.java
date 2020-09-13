@@ -19,8 +19,8 @@ public class AirQualityObservedDTO {
     private String locationName5 = "addressTown";
     private String addressTown; 
     private String locationType;
-    private Number locationLatitute;
-    private Number locationLongitude;   
+    private String latitute;
+    private String longitude;
     private String modifiedAt;
     private String createdAt;
     private String observedAt1;         // getAirQualityObservation().getObservedAt()
@@ -31,11 +31,11 @@ public class AirQualityObservedDTO {
     }
 
     public void setObservedValue1(String observedValue1) {
-        this.observedValue1 = observedValue1;
+        this.observedValue1 = observedValue1.toString();
     }
 
     public void setObservedValue2(String observedValue2) {
-        this.observedValue2 = observedValue2;
+        this.observedValue2 = observedValue2.toString();
     }
 
     public void setIndexRef(String indexRef) {
@@ -93,29 +93,29 @@ public class AirQualityObservedDTO {
     public void setLocationType(String locationType) {
         this.locationType = locationType;
     }
-    
-    public void setLocationLatitute(Number locationLatitute) {
-        this.locationLatitute = locationLatitute;
+
+    public void setLatitute(String latitute) {
+        this.latitute = latitute;
     }
 
-    public void setLocationLongitude(Number locationLongitude) {
-        this.locationLongitude = locationLongitude;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
     
     public void setModifiedAt(String modifiedAt) {
-        this.modifiedAt = modifiedAt;
+        this.modifiedAt = modifiedAt.split(",")[0]+"+09:00";
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.createdAt = createdAt.split(",")[0]+"+09:00";
     }
     
     public void setObservedAt1(String observedAt1) {
-        this.observedAt1 = observedAt1;
+        this.observedAt1 = observedAt1.split(",")[0]+"+09:00";
     }
-    
+
     public void setObservedAt2(String observedAt2) {
-        this.observedAt2 = observedAt2;
+        this.observedAt2 = observedAt2.split(",")[0]+"+09:00";
     }
 
 }
