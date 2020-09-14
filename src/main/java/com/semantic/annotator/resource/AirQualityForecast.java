@@ -49,7 +49,7 @@ public class AirQualityForecast {
         public String getObservedAt () {
             return observedAt;
         }
-        
+
     }
 
         public AirQualityPrediction getAirQualityPrediction() {

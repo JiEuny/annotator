@@ -55,6 +55,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>apache-jena-libs</artifactId>
+            <version>3.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>virt_jena3</groupId>
+            <artifactId>virt-custom</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/virt_jena3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>virtjdbc4</groupId>
+            <artifactId>virtjdbc-custom</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/virtjdbc4.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

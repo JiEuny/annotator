@@ -156,4 +156,49 @@ public class OffStreetParkingDTO {
     public void setPredictedAt(String predictedAt) {
         this.predictedAt = predictedAt.split(",")[0]+"+09:00";
     }
+
+    public String getOrder(int i) {
+        String result = "";
+        switch (i) {
+            case 0: result = id; break;
+            case 1: result = name; break;
+            case 2: result = locationTag; break;
+            case 3: result = category0; break;
+            case 4: result = category1; break;
+            case 5: result = totalSpotNumber; break;
+            case 6: result = availableSpotNumber; break;
+            case 7: result = status0; break;
+            case 8: result = status1; break;
+            case 9: result = telephone; break;
+            case 10: result = email; break;
+            case 11: result = contactType; break;
+            case 12: result = paymentType0; break;
+            case 13: result = paymentType1; break;
+            case 14: result = priceRate; break;
+            case 15: result = priceCurrency; break;
+            case 16: result = image; break;
+            case 17: result = locationType; break;
+            case 18: result = latitute; break;
+            case 19: result = longitude; break;
+            case 20: result = locationName1; break;
+            case 21: result = addressCountry; break;
+            case 22: result = locationName2; break;
+            case 23: result = addressRegion; break;
+            case 24: result = locationName3; break;
+            case 25: result = addressLocality; break;
+            case 26: result = locationName4; break;
+            case 27: result = streetAddress; break;
+            case 28: result = locationName5; break;
+            case 29: result = addressTown; break;
+            case 30: result = createdAt; break;
+            case 31: result = modifiedAt; break;
+            case 32: result = openingHours; break;
+            case 33: result = endingHours; break;
+            case 34: result = openingType; break;
+            case 35: result = endingType; break;
+            case 36: result = estimatedValue; break;
+            case 37: result = predictedAt; break;
+        }
+        return result;
+    }
 }
