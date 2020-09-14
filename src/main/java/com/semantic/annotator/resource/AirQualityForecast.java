@@ -49,48 +49,7 @@ public class AirQualityForecast {
         public String getObservedAt () {
             return observedAt;
         }
-
-//        public class AirQualityPredictionValue {
-//            private Number no2;
-//            private Number o3;
-//            private Number pm25;
-//            private Number so2;
-//            private Number pm10;
-//            private Number co;
-//            private String predictedAt;
-//
-//            public Number getNO2() {
-//                return no2;
-//            }
-//
-//            public Number getO3() {
-//                return o3;
-//            }
-//
-//            public Number getPM25() {
-//                return pm25;
-//            }
-//
-//            public Number getSO2() {
-//                return so2;
-//            }
-//
-//            public Number getPM10() {
-//                return pm10;
-//            }
-//
-//            public Number getCO() {
-//                return co;
-//            }
-//
-//            public String getPredictedAt () {
-//                return predictedAt;
-//            }
-//
-//        }
-//        public AirQualityPredictionValue getValue(int i) {
-//            return value[i];
-//        }
+        
     }
 
         public AirQualityPrediction getAirQualityPrediction() {
