@@ -36,61 +36,63 @@ public class AirQualityForecast {
         return address;
     }
 
-    private class AirQualityPrediction {
+    public class AirQualityPrediction {
         private String observedAt;
         private String type;
-        private String airQualityPrediction;
+        private Object value;
+//        private AirQualityPredictionValue[] value;
 
-        private AirQualityPredictionValue[] value;
-        public class AirQualityPredictionValue {
-            private Number no2;
-            private Number o3;
-            private Number pm25;
-            private Number so2;
-            private Number pm10;
-            private Number co;
-            private String predictedAt;
 
-            public Number getNO2() {
-                return no2;
-            }
-
-            public Number getO3() {
-                return o3;
-            }
-
-            public Number getPM25() {
-                return pm25;
-            }
-
-            public Number getSO2() {
-                return so2;
-            }
-
-            public Number getPM10() {
-                return pm10;
-            }
-
-            public Number getCO() {
-                return co;
-            }
-
-            public String getPredictedAt () {
-                return predictedAt;
-            }
-        }
-
-        public AirQualityPredictionValue getValue(int i) {
-            return value[i];
+        public Object getValue() {
+            return value;
         }
 
         public String getObservedAt () {
-            return observedAt;   
+            return observedAt;
         }
 
-        public String getAirQualityObservation() {
-            return airQualityObservation;
-        }
+//        public class AirQualityPredictionValue {
+//            private Number no2;
+//            private Number o3;
+//            private Number pm25;
+//            private Number so2;
+//            private Number pm10;
+//            private Number co;
+//            private String predictedAt;
+//
+//            public Number getNO2() {
+//                return no2;
+//            }
+//
+//            public Number getO3() {
+//                return o3;
+//            }
+//
+//            public Number getPM25() {
+//                return pm25;
+//            }
+//
+//            public Number getSO2() {
+//                return so2;
+//            }
+//
+//            public Number getPM10() {
+//                return pm10;
+//            }
+//
+//            public Number getCO() {
+//                return co;
+//            }
+//
+//            public String getPredictedAt () {
+//                return predictedAt;
+//            }
+//
+//        }
+//        public AirQualityPredictionValue getValue(int i) {
+//            return value[i];
+//        }
+    }
 
         public AirQualityPrediction getAirQualityPrediction() {
             return airQualityPrediction;
@@ -100,68 +102,68 @@ public class AirQualityForecast {
     public class AirQualityIndexPrediction {
         private String observedAt;
         private String type;
-        private String airQualityIndexPrediction;
+//        private AirQualityIndexPredictionValue[] value;
+        private Object value;
 
-        private AirQualityIndexPredictionValue[] value;
-        public class AirQualityIndexPredictionValue {
-            private Number totalIndex;
-            private String totalCategory;
-            private String so2Category;
-            private String coCategory;
-            private String o3Category;
-            private String no2Category;
-            private String pm10Category;
-            private String pm25Category;
-            private String predictedAt;
-
-            public Number getTotalIndex() {
-                return totalIndex;
-            }
-
-            public String getTotalCategory() {
-                return totalCategory;
-            }
-            
-            public String getSO2Category() {
-                return so2Category;
-            }
-
-            public String getCOCategory() {
-                return coCategory;
-            }
-
-            public String getO3Category() {
-                return o3Category;
-            }
-
-            public String getNO2Category() {
-                return no2Category;
-            }
-
-            public String getPM10Category() {
-                return pm10Category;
-            }
-
-            public String getPM25Category() {
-                return pm25Category;
-            }
-
-            public String getPredictedAt() {
-                return predictedAt;
-            }
-        }
-
-        public AirQualityIndexPredictionValue getValue(int i) {
-            return value[i];
+        public Object getValue() {
+            return value;
         }
 
         public String getObservedAt() {
             return observedAt;
         }
 
-        public String getAirQualityIndexPrediction() {
-            return airQualityIndexPrediction;
-        }
+//        public class AirQualityIndexPredictionValue {
+//            private Number totalIndex;
+//            private String totalCategory;
+//            private String so2Category;
+//            private String coCategory;
+//            private String o3Category;
+//            private String no2Category;
+//            private String pm10Category;
+//            private String pm25Category;
+//            private String predictedAt;
+//
+//            public Number getTotalIndex() {
+//                return totalIndex;
+//            }
+//
+//            public String getTotalCategory() {
+//                return totalCategory;
+//            }
+//
+//            public String getSO2Category() {
+//                return so2Category;
+//            }
+//
+//            public String getCOCategory() {
+//                return coCategory;
+//            }
+//
+//            public String getO3Category() {
+//                return o3Category;
+//            }
+//
+//            public String getNO2Category() {
+//                return no2Category;
+//            }
+//
+//            public String getPM10Category() {
+//                return pm10Category;
+//            }
+//
+//            public String getPM25Category() {
+//                return pm25Category;
+//            }
+//
+//            public String getPredictedAt() {
+//                return predictedAt;
+//            }
+//
+//        }
+//        public AirQualityIndexPredictionValue getValue(int i) {
+//            return value[i];
+//        }
     }
 
     public AirQualityIndexPrediction getAirQualityIndexPrediction() {

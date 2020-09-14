@@ -26,10 +26,7 @@ public class WeatherObservedSeeker {
                 field("weatherObservation.observedAt","observedAt").
                 byDefault().
                 register();
-        //CHECK
-        //resource : type, //weatherObservation : resource
-        //DTO : addressName1~5, //weatherObservation, weatherEvaluationHasRecord : resource
-        //byDefault : id, createdAt, modifiedAt
+
     }
 
     public <S, D> D map(S s, Class<D> type) {

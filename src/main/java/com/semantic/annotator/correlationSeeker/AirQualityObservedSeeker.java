@@ -28,13 +28,10 @@ public class AirQualityObservedSeeker {
                 field("location.value.type","locationType").
                 field("location.value.coordinates[0]","latitute").
                 field("location.value.coordinates[1]","longitude").
-
                 field("airQualityObservation.observedAt","observedAt1").
                 field("airQualityIndexObservation.observedAt","observedAt2").
                 register();
-        
-       // CHECK
-       // DTO : evaluationValue1, evaluationValue2
+
     }
 
     public <S, D> D map(S s, Class<D> type) {

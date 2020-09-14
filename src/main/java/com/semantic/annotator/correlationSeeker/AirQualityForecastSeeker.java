@@ -15,21 +15,18 @@ public class AirQualityForecastSeeker {
                 mapNulls(false).
                 mapNullsInReverse(false).
                 byDefault().
-                field("location.type", "locationType").
-                field("location.value.coordinates[0].latitude", "locationLatitute").
-                field("location.value.coordinates[0].longitude", "locationLongitude").
+                field("airQualityPrediction.value", "estimatedValue1").
+                field("airQualityIndexPrediction.value", "estimatedValue2").
+                field("airQualityPrediction.value", "evaluationValue1").
+                field("airQualityIndexPrediction.value", "evaluationValue2").
                 field("address.value.addressCountry", "addressCountry").
                 field("address.value.addressRegion", "addressRegion").
                 field("address.value.addressLocality", "addressLocality").
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
-
-                field("airQualityPrediction.airQualityPrediction", "estimatedValue1").
-                field("airQualityIndexPrediction.airQualityIndexPrediction", "estimatedValue2").
-
-                field("airQualityPrediction.airQualityPrediction", "evaluationValue1").
-                field("airQualityIndexPrediction.airQualityIndexPrediction", "evaluationValue2").
-
+                field("location.type", "locationType").
+                field("location.value.coordinates[0]", "latitute").
+                field("location.value.coordinates[1]", "longitude").
                 field("airQualityPrediction.observedAt","observedAt1").
                 field("airQualityIndexPrediction.observedAt","observedAt2").
                 register();
