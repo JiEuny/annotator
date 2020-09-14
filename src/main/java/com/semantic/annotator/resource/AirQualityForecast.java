@@ -42,7 +42,6 @@ public class AirQualityForecast {
         private Object value;
 //        private AirQualityPredictionValue[] value;
 
-
         public Object getValue() {
             return value;
         }
