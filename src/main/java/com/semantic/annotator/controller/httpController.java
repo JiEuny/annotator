@@ -40,7 +40,8 @@ public class httpController {
         RestTemplate restTemplate = new RestTemplate();
 
 //        String url = "http://192.168.0.20:8080/entities?type=";
-        String url = "http://192.168.0.103:8080/entities?type=";
+//        String url = "http://192.168.0.103:8080/entities?type=";
+        String url = "http://localhost:8080/entities?type=";
 
 //        String url = "http://localhost:12345";
 

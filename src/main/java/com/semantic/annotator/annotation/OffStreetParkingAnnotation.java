@@ -7,6 +7,7 @@ import com.google.gson.JsonParser;
 import com.semantic.annotator.correlationSeeker.OffStreetParkingSeeker;
 import com.semantic.annotator.resource.OffStreetParking;
 import com.semantic.annotator.resourceDTO.OffStreetParkingDTO;
+import org.apache.jena.base.Sys;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
 import org.apache.jena.graph.Triple;
@@ -14,6 +15,8 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import sun.security.util.Resources;
 import virtuoso.jena.driver.VirtModel;
+import virtuoso.jena.driver.VirtuosoUpdateFactory;
+import virtuoso.jena.driver.VirtuosoUpdateRequest;
 
 import javax.annotation.Resource;
 import java.io.*;
@@ -32,7 +35,7 @@ public class OffStreetParkingAnnotation {
 
     public OffStreetParkingAnnotation(OffStreetParking data) {
 
-        Map<String, String> Domain_list = new HashMap<>();
+        ArrayList<String> Domain_list = new ArrayList<>();
         ArrayList<String> typeList = new ArrayList<>();
 
         OffStreetParkingSeeker correlationSeeker = new OffStreetParkingSeeker();
@@ -61,18 +64,18 @@ public class OffStreetParkingAnnotation {
                 for(int i=0; i<temp.getValue().getAsJsonArray().size(); i++) {
                     if(temp.getKey().equals("type-list")) {
                         JsonArray tempArray = temp.getValue().getAsJsonArray();
-                        typeList.add(tempArray.get(i).toString());
+                        typeList.add(tempArray.get(i).toString().replaceAll("\"","")+"_"+data.getId().split(":")[3]);
                     } else if(temp.getKey().equals("individual-list")) {
                         JsonArray tempArray = temp.getValue().getAsJsonArray();
-
-                        Node domain = NodeFactory.createURI(graph_name);
+                        Domain_list.add(tempArray.get(i).toString().replaceAll("\"","")+"_"+data.getId().split(":")[3]);
+                        Node domain = NodeFactory.createURI(tempArray.get(i).toString().replaceAll("\"","")+"_"+data.getId().split(":")[3]);
                         Node type_d = NodeFactory.createURI(type);
                         Node range = NodeFactory.createURI(typeList.get(i));
 
                         Triple triples = new Triple(domain, type_d, range);
                         model.add(model.asStatement(triples));
 
-                        domain = NodeFactory.createURI(graph_name);
+                        domain = NodeFactory.createURI(Domain_list.get(i));
                         type_d = NodeFactory.createURI(type);
                         range = NodeFactory.createURI(nameIndivual_type);
 
@@ -84,9 +87,15 @@ public class OffStreetParkingAnnotation {
                         JsonElement triple = properties.get(i);
                         JsonObject element = triple.getAsJsonObject();
 
-                        Node domain = NodeFactory.createURI(element.get("domain").toString());
+                        Node domain = NodeFactory.createURI(element.get("domain").toString().replaceAll("\"","")+"_"+data.getId().split(":")[3]);
                         Node type_d = NodeFactory.createURI(element.get("property").toString());
-                        Node range = NodeFactory.createURI(element.get("range").toString());
+                        Node range;
+
+                        if(element.get("property").toString().equals("\"http://www.w3.org/2006/time#dayOfWeek\"")) {
+                            range = NodeFactory.createURI(element.get("range").toString());
+                        } else {
+                            range = NodeFactory.createURI(element.get("range").toString().replaceAll("\"","")+"_"+data.getId().split(":")[3]);
+                        }
 
                         Triple triples = new Triple(domain, type_d, range);
                         model.add(model.asStatement(triples));
@@ -95,7 +104,7 @@ public class OffStreetParkingAnnotation {
                         JsonElement triple = properties.get(i);
                         JsonObject element = triple.getAsJsonObject();
 
-                        Node domain = NodeFactory.createURI(element.get("domain").toString());
+                        Node domain = NodeFactory.createURI(element.get("domain").toString().replaceAll("\"","")+"_"+data.getId().split(":")[3]);
                         Node type_d = NodeFactory.createURI(element.get("property").toString());
                         Node range = NodeFactory.createURI(mappedOffStreetParkingDTO.getOrder(i));
 
@@ -109,6 +118,10 @@ public class OffStreetParkingAnnotation {
         }
 
         VirtModel vm = VirtModel.openDatabaseModel(graph_name, url, "dba", "dba");
+        String drop_graph_query = "DROP SILENT GRAPH <" + graph_name +">";
+        VirtuosoUpdateRequest virtuosoUpdateRequest = VirtuosoUpdateFactory.create(drop_graph_query, vm);
+        virtuosoUpdateRequest.exec();
+        System.out.println("drop graph");
         vm.add(model);
         System.out.println(""+model.size()+" triples created");
         vm.close();
