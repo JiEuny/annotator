@@ -71,57 +71,7 @@ public class AirQualityForecast {
             return observedAt;
         }
 
-//        public class AirQualityIndexPredictionValue {
-//            private Number totalIndex;
-//            private String totalCategory;
-//            private String so2Category;
-//            private String coCategory;
-//            private String o3Category;
-//            private String no2Category;
-//            private String pm10Category;
-//            private String pm25Category;
-//            private String predictedAt;
-//
-//            public Number getTotalIndex() {
-//                return totalIndex;
-//            }
-//
-//            public String getTotalCategory() {
-//                return totalCategory;
-//            }
-//
-//            public String getSO2Category() {
-//                return so2Category;
-//            }
-//
-//            public String getCOCategory() {
-//                return coCategory;
-//            }
-//
-//            public String getO3Category() {
-//                return o3Category;
-//            }
-//
-//            public String getNO2Category() {
-//                return no2Category;
-//            }
-//
-//            public String getPM10Category() {
-//                return pm10Category;
-//            }
-//
-//            public String getPM25Category() {
-//                return pm25Category;
-//            }
-//
-//            public String getPredictedAt() {
-//                return predictedAt;
-//            }
-//
-//        }
-//        public AirQualityIndexPredictionValue getValue(int i) {
-//            return value[i];
-//        }
+
     }
 
     public AirQualityIndexPrediction getAirQualityIndexPrediction() {
