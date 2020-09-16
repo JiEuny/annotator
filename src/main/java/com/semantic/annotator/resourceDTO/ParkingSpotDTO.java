@@ -7,7 +7,7 @@ public class ParkingSpotDTO {
     private String modifiedAt;
 
     private String locationType;
-    private String  latitute;
+    private String latitute;
     private String longitude;
 
     private String addressName1 = "addressCountry";
@@ -113,5 +113,34 @@ public class ParkingSpotDTO {
 
     public void setLength(String length) {
         this.length = length;
+    }
+
+    public String getOrder(int i) {
+        String result = "";
+        switch (i) {
+            case 0: result = id; break;
+            case 1: result = name; break;
+            case 2: result = createdAt; break;
+            case 3: result = modifiedAt; break;
+            case 4: result = locationType; break;
+            case 5: result = latitute; break;
+            case 6: result = longitude; break;
+            case 7: result = addressName1; break;
+            case 8: result = addressCountry; break;
+            case 9: result = addressName2; break;
+            case 10: result = addressRegion; break;
+            case 11: result = addressName3; break;
+            case 12: result = addressLocality; break;
+            case 13: result = addressName4; break;
+            case 14: result = streetAddress; break;
+            case 15: result = addressName5; break;
+            case 16: result = addressTown; break;
+            case 17: result = category; break;
+            case 18: result = refParkingLot; break;
+            case 19: result = status; break;
+            case 20: result = width; break;
+            case 21: result = length; break;
+        }
+        return result;
     }
 }
