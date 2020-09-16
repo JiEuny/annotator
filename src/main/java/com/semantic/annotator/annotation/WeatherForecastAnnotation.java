@@ -1,20 +1,20 @@
 package com.semantic.annotator.annotation;
 
-import com.semantic.annotator.correlationSeeker.WeatherObservedSeeker;
-import com.semantic.annotator.resource.WeatherObserved;
-import com.semantic.annotator.resourceDTO.WeatherObservedDTO;
+import com.semantic.annotator.correlationSeeker.WeatherForecastSeeker;
+import com.semantic.annotator.resource.WeatherForecast;
+import com.semantic.annotator.resourceDTO.WeatherForecastDTO;
 
 import java.util.ArrayList;
 
-public class WeatherObservedAnnotation {
+public class WeatherForecastAnnotation {
 
     String graph_name = "http://www.city-hub.kr/ontologies/2019/1/weather#";
-    String template = "\\src\\main\\java\\com\\semantic\\Annotator\\template\\WeatherObserved.json";
+    String template = "\\src\\main\\java\\com\\semantic\\Annotator\\template\\WeatherEstimation.json";
 
-    public WeatherObservedAnnotation(WeatherObserved data) {
+    public WeatherForecastAnnotation(WeatherForecast data) {
 
-        WeatherObservedSeeker weatherObservedSeeker = new WeatherObservedSeeker();
-        WeatherObservedDTO mappedDTO = weatherObservedSeeker.map(data, WeatherObservedDTO.class);
+        WeatherForecastSeeker weatherForecastSeeker = new WeatherForecastSeeker();
+        WeatherForecastDTO mappedDTO = weatherForecastSeeker.map(data, WeatherForecastDTO.class);
 
         ArrayList<String> hub_data = new ArrayList<>();
         for(int i=0; i<19; i++) {
@@ -25,6 +25,5 @@ public class WeatherObservedAnnotation {
         String entity_id = data.getId().split(":")[2] + "_" + data.getId().split(":")[3];
 
         Annotator annotator = new Annotator(graph_name, template, entity_id, hub_data);
-
     }
 }

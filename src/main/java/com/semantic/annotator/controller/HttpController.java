@@ -1,8 +1,7 @@
 package com.semantic.annotator.controller;
 
 import com.google.gson.*;
-import com.semantic.annotator.annotation.OffStreetParkingAnnotation;
-import com.semantic.annotator.annotation.ParkingSpotAnnotation;
+import com.semantic.annotator.annotation.*;
 import com.semantic.annotator.correlationSeeker.*;
 import com.semantic.annotator.resource.*;
 import com.semantic.annotator.resourceDTO.*;
@@ -28,6 +27,8 @@ public class HttpController {
     List<AirQualityForecast> airQualityForecastList;
     WeatherObserved[] weatherObserveds;
     List<WeatherObserved> weatherObservedList;
+    WeatherForecast[] weatherForecasts;
+    List<WeatherForecast> weatherForecastList;
 
 //    @RequestMapping("/")
     public String getEntities() {
@@ -76,6 +77,9 @@ public class HttpController {
                     weatherObserveds = gson.fromJson(result, WeatherObserved[].class);
                     weatherObservedList = Arrays.asList(weatherObserveds);
                     break;
+                case 5:
+                    weatherForecasts = gson.fromJson(result, WeatherForecast[].class);
+                    weatherForecastList = Arrays.asList(weatherForecasts);
             }
         }
 
@@ -83,19 +87,25 @@ public class HttpController {
             OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(i));
         }
 
-        ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(0));
+        for(int i = 0; i<parkingSpotList.size(); i++) {
+            ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(i));
+        }
 
-        AirQualityObservedSeeker airQualityObservedSeeker = new AirQualityObservedSeeker();
-        AirQualityObservedDTO mappedAirObservedDTO = airQualityObservedSeeker.map(airQualityObservedList.get(0), AirQualityObservedDTO.class);
-//        System.out.println(mappedAirObservedDTO);
+        for(int i = 0; i<airQualityObservedList.size(); i++) {
+            AirObservedAnnotation airObservedAnnotation = new AirObservedAnnotation(airQualityObservedList.get(i));
+        }
 
-        AirQualityForecastSeeker airQualityForecastSeeker = new AirQualityForecastSeeker();
-        AirQualityForecastDTO mappedAirForecastDTO = airQualityForecastSeeker.map(airQualityForecastList.get(0), AirQualityForecastDTO.class);
-//        System.out.println(mappedAirForecastDTO);
+        for(int i = 0; i<airQualityForecastList.size(); i++) {
+            AirForecastAnnotation airForecastAnnotation = new AirForecastAnnotation(airQualityForecastList.get(i));
+        }
 
-        WeatherObservedSeeker weatherObservedSeeker = new WeatherObservedSeeker();
-        WeatherObservedDTO mappedWeatherObservedDTO = weatherObservedSeeker.map(weatherObservedList.get(0), WeatherObservedDTO.class);
-//        System.out.println(mappedWeatherObservedDTO);
+        for (int i = 0; i<weatherObservedList.size(); i++) {
+            WeatherObservedAnnotation weatherObservedAnnotation = new WeatherObservedAnnotation(weatherObservedList.get(i));
+        }
+
+        for(int i = 0; i<weatherForecastList.size(); i++) {
+            WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(i));
+        }
 
         return "test";
     }

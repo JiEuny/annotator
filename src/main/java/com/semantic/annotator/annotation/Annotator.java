@@ -98,7 +98,7 @@ public class Annotator {
 
                         XSDTypeMaker typeMaker = new XSDTypeMaker();
                         XSDDatatype datatype = typeMaker.getXSDType(element.get("range").toString());
-                        Node range = NodeFactory.createLiteralByValue(hub_data.get(i), datatype);
+                        Node range = NodeFactory.createLiteralByValue(datatype.parse(hub_data.get(i)), datatype);
 
                         Triple triples = new Triple(domain, type_d, range);
                         model.add(model.asStatement(triples));
