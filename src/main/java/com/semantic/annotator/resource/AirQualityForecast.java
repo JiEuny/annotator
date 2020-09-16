@@ -52,9 +52,8 @@ public class AirQualityForecast {
 
     }
 
-        public AirQualityPrediction getAirQualityPrediction() {
-            return airQualityPrediction;
-        }
+    public AirQualityPrediction getAirQualityPrediction() {
+        return airQualityPrediction;
     }
 
     public class AirQualityIndexPrediction {
