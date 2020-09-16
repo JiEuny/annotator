@@ -9,12 +9,16 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 import java.util.List;
 
-//@Controller
+@Controller
 public class HttpController {
 
     OffStreetParking[] offStreetParkings;
@@ -30,28 +34,45 @@ public class HttpController {
     WeatherForecast[] weatherForecasts;
     List<WeatherForecast> weatherForecastList;
 
+    RestTemplate restTemplate = new RestTemplate();
+    String url = "http://localhost:8080";
+
+    HttpHeaders headers = new HttpHeaders();
+
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    @RequestMapping(value = "/notify")
+    public String noti(@RequestBody String requestbody) {
+
+        JsonParser parser = new JsonParser();
+        JsonElement jsonElement = parser.parse(requestbody).getAsJsonObject();
+        JsonObject jsonObject = (JsonObject)jsonElement;
+
+        if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("OffStreetParking\"")) {
+
+            JsonArray jsonArray = jsonObject.get("data").getAsJsonArray();
+            offStreetParkings = gson.fromJson(jsonArray, OffStreetParking[].class);
+            offStreetParkingList = Arrays.asList(offStreetParkings);
+            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(0));
+        }
+
+        return "";
+    }
+
 //    @RequestMapping("/")
     public String getEntities() {
 
-        RestTemplate restTemplate = new RestTemplate();
-
-//        String url = "http://192.168.0.20:8080/entities?type=";
-//        String url = "http://192.168.0.103:8080/entities?type=";
-        String url = "http://localhost:8080/entities?type=";
-
         List<String> type = new ArrayList<>();
-        type.add("OffStreetParking");
-        type.add("ParkingSpot");
-        type.add("AirQualityObserved");
-        type.add("AirQualityForecast");
-        type.add("WeatherObserved");
-        type.add("WeatherForecast");
+        type.add("/entities?type=OffStreetParking");
+        type.add("/entities?type=ParkingSpot");
+        type.add("/entities?type=AirQualityObserved");
+        type.add("/entities?type=AirQualityForecast");
+        type.add("/entities?type=WeatherObserved");
+        type.add("/entities?type=WeatherForecast");
 
-        HttpHeaders headers = new HttpHeaders();
         headers.set("accept", "application/ld+json");
         HttpEntity<String> entity = new HttpEntity<String>(headers);
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         for(int i = 0; i < type.size(); i++ ) {
             String result = restTemplate.exchange(url+type.get(i), HttpMethod.GET, entity, String.class).getBody();
