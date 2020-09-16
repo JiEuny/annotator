@@ -113,4 +113,77 @@ public class AirQualityForecastDTO {
     public void setObservedAt2(String observedAt2) {
         this.observedAt2 = observedAt2.split(",")[0]+"+09:00";
     }
+
+    public String getOrder(int i) {
+        String result = "";
+        switch (i) {
+            case 0:
+                result = id;
+                break;
+            case 1:
+                result = estimatedValue1;
+                break;
+            case 2:
+                result = estimatedValue2;
+                break;
+            case 3:
+                result = evaluationValue1;
+                break;
+            case 4:
+                result = evaluationValue2;
+                break;
+            case 5:
+                result = locationName1;
+                break;
+            case 6:
+                result = addressCountry;
+                break;
+            case 7:
+                result = locationName2;
+                break;
+            case 8:
+                result = addressRegion;
+                break;
+            case 9:
+                result = locationName3;
+                break;
+            case 10:
+                result = addressLocality;
+                break;
+            case 11:
+                result = locationName4;
+                break;
+            case 12:
+                result = streetAddress;
+                break;
+            case 13:
+                result = locationName5;
+                break;
+            case 14:
+                result = addressTown;
+                break;
+            case 15:
+                result = locationType;
+                break;
+            case 16:
+                result = latitute;
+                break;
+            case 17:
+                result = longitude;
+                break;
+            case 18:
+                result = modifiedAt;
+                break;
+            case 19:
+                result = createdAt;
+                break;
+            case 20:
+                result = observedAt1;
+                break;
+            case 21:
+                result = observedAt2;
+                break;
+        }
+        return result;
+    }
 }
