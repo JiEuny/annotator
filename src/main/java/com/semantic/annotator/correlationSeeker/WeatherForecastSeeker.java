@@ -8,19 +8,21 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 public class WeatherForecastSeeker {
     private MapperFactory mapperFactory;
 
-    public WeatherForecastSeeker(MapperFactory mapperFactory) {
+    public WeatherForecastSeeker() {
         this.mapperFactory = new DefaultMapperFactory.Builder().build();
         this.mapperFactory.classMap(WeatherForecast.class, WeatherForecastDTO.class).
                 mapNulls(false).
                 mapNullsInReverse(false).
+                field("weatherPrediction.value","estimatedValue").
+                field("weatherPrediction.value","evaluationValue").
                 field("address.value.addressCountry", "addressCountry").
                 field("address.value.addressRegion", "addressRegion").
                 field("address.value.addressLocality", "addressLocality").
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
-                field("location.type", "locationType").
-                field("location.value.coordinates[0].latitude", "locationLatitute").
-                field("location.value.coordinates[0].longitude", "locationLongitude").
+                field("location.value.type", "locationType").
+                field("location.value.coordinates[0]", "latitute").
+                field("location.value.coordinates[1]", "longitude").
                 field("weatherPrediction.observedAt","observedAt").
                 byDefault().
                 register();

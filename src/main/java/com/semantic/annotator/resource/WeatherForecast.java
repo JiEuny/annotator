@@ -34,82 +34,17 @@ public class WeatherForecast {
         return address;
     }
 
-    private class WeatherPrediction {
+    public class WeatherPrediction {
         private String observedAt;
         private String type;
-
-        //CHECK
-        private String estimatedValue;
-        private String evaluationValue;
-
-        private WeatherPredictionValue[] value;
-        public class WeatherPredictionValue {
-            private Number temperature;
-            private Number lowestTemperature;
-            private Number highestTemperature;
-            private Number windSpeed;
-            private Number humidity;
-            private Number rainfall;
-            private Number rainfallProbability;
-            private String rainType;
-            private Number snowfall;
-            private String predictedAt;
-
-            public Number getTemparature() {
-                return temperature;
-            }
-
-            public Number getLowestTemperature() {
-                return lowestTemperature;
-            }
-
-            public Number getHighestTemperature() {
-                return highestTemperature;
-            }
-
-            public Number getWindSpeed() {
-                return windSpeed;
-            }
-
-            public Number getHumidity() {
-                return humidity;
-            }
-
-            public Number getRainfall() {
-                return rainfall;
-            }
-
-            public Number getRainfallProbability() {
-                return rainfallProbability;
-            }
-
-            public String getRainType() {
-                return rainType;
-            }
-
-            public Number getSnowfall() {
-                return snowfall;
-            }
-
-            public String getPredictedAt() {
-                return predictedAt;
-            }
-        }
-
-        public WeatherPredictionValue getValue(int i) {
-            return value[i];
-        }
+        private Object value;
 
         public String getObservedAt () {
             return observedAt;
         }
 
-        public String getEstimatedValue() {
-            return estimatedValue;
-        }
-
-        public String getEvaluationValue() {
-            return evaluationValue;
+        public Object getValue() {
+            return value;
         }
     }
 
