@@ -118,4 +118,33 @@ public class AirQualityObservedDTO {
         this.observedAt2 = observedAt2.split(",")[0]+"+09:00";
     }
 
+    public String getOrder(int i) {
+        String result = "";
+        switch (i) {
+            case 0: result = id; break;
+            case 1: result = observedValue1; break;
+            case 2: result = observedValue2; break;
+            case 3: result = indexRef; break;
+            case 4: result = evaluationValue1; break;
+            case 5: result = evaluationValue2; break;
+            case 6: result = locationName1; break;
+            case 7: result = addressCountry; break;
+            case 8: result = locationName2; break;
+            case 9: result = addressRegion; break;
+            case 10: result = locationName3; break;
+            case 11: result = addressLocality; break;
+            case 12: result = locationName4; break;
+            case 13: result = streetAddress; break;
+            case 14: result = locationName5; break;
+            case 15: result = addressTown; break;
+            case 16: result = locationType; break;
+            case 17: result = latitute; break;
+            case 18: result = longitude; break;
+            case 19: result = modifiedAt; break;
+            case 20: result = createdAt; break;
+            case 21: result = observedAt1; break;
+            case 22: result = observedAt2; break;
+        }
+        return result;
+    }
 }
