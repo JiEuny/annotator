@@ -2,19 +2,18 @@ package com.semantic.annotator.controller;
 
 import com.google.gson.*;
 import com.semantic.annotator.annotation.*;
-import com.semantic.annotator.correlationSeeker.*;
 import com.semantic.annotator.resource.*;
-import com.semantic.annotator.resourceDTO.*;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
 import java.util.List;
 
@@ -41,26 +40,7 @@ public class HttpController {
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    @RequestMapping(value = "/notify")
-    public String noti(@RequestBody String requestbody) {
-
-        JsonParser parser = new JsonParser();
-        JsonElement jsonElement = parser.parse(requestbody).getAsJsonObject();
-        JsonObject jsonObject = (JsonObject)jsonElement;
-
-        if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("OffStreetParking\"")) {
-
-            JsonArray jsonArray = jsonObject.get("data").getAsJsonArray();
-            offStreetParkings = gson.fromJson(jsonArray, OffStreetParking[].class);
-            offStreetParkingList = Arrays.asList(offStreetParkings);
-            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(0));
-        }
-
-        return "";
-    }
-
-//    @RequestMapping("/")
-    public String getEntities() {
+    public void getEntities() {
 
         List<String> type = new ArrayList<>();
         type.add("/entities?type=OffStreetParking");
@@ -128,6 +108,82 @@ public class HttpController {
             WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(i));
         }
 
-        return "test";
+    }
+
+    public void createSubscription() {
+
+        headers.set("Accept", "application/json");
+        headers.set("Content-Type", "application/ld+json");
+
+        String subscripntion = "\\src\\main\\java\\com\\semantic\\Annotator\\controller\\SubscriptionList.json";
+
+        FileReader reader = null;
+        List<String> subList = null;
+
+        try {
+            reader = new FileReader(System.getProperty("user.dir") + subscripntion);
+        } catch (FileNotFoundException e) {
+
+        }
+
+        JsonParser jsonParser = new JsonParser();
+        JsonElement jsonElement = jsonParser.parse(reader);
+        JsonArray jsonArray = jsonElement.getAsJsonArray();
+
+        for (int i = 0; i<jsonArray.size(); i++) {
+            HttpEntity<String> entity = new HttpEntity<String>(jsonArray.get(i).toString(), headers);
+            String result = restTemplate.exchange(url+"/subscriptions", HttpMethod.POST, entity, String.class).getBody();
+            System.out.println("create"+result);
+        }
+
+    }
+
+    @RequestMapping(value = "/notify")
+    public String notification(@RequestBody String requestbody) {
+
+        JsonParser parser = new JsonParser();
+        JsonElement jsonElement = parser.parse(requestbody).getAsJsonObject();
+        JsonObject jsonObject = (JsonObject)jsonElement;
+        JsonArray jsonArray = jsonObject.get("data").getAsJsonArray();
+
+        if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("OffStreetParking\"")) {
+
+            offStreetParkings = gson.fromJson(jsonArray, OffStreetParking[].class);
+            offStreetParkingList = Arrays.asList(offStreetParkings);
+            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(0));
+
+        } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("ParkingSpot\"")) {
+
+            parkingSpots = gson.fromJson(jsonArray, ParkingSpot[].class);
+            parkingSpotList = Arrays.asList(parkingSpots);
+            ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(0));
+
+        } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("AirQualityObserved\"")) {
+
+            airQualityObserveds = gson.fromJson(jsonArray, AirQualityObserved[].class);
+            airQualityObservedList = Arrays.asList(airQualityObserveds);
+            AirObservedAnnotation airObservedAnnotation = new AirObservedAnnotation(airQualityObservedList.get(0));
+
+        } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("AirQualityForecast\"")) {
+
+            airQualityForecasts = gson.fromJson(jsonArray, AirQualityForecast[].class);
+            airQualityForecastList = Arrays.asList(airQualityForecasts);
+            AirForecastAnnotation airForecastAnnotation = new AirForecastAnnotation(airQualityForecastList.get(0));
+
+        } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("WeatherObserved\"")) {
+
+            weatherObserveds = gson.fromJson(jsonArray, WeatherObserved[].class);
+            weatherObservedList = Arrays.asList(weatherObserveds);
+            WeatherObservedAnnotation weatherObservedAnnotation = new WeatherObservedAnnotation(weatherObservedList.get(0));
+
+        } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("WeatherForecast\"")) {
+
+            weatherForecasts = gson.fromJson(jsonArray, WeatherForecast[].class);
+            weatherForecastList = Arrays.asList(weatherForecasts);
+            WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(0));
+
+        }
+
+        return "";
     }
 }

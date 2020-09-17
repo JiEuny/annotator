@@ -11,6 +11,7 @@ public class AnnotatorApplication {
         SpringApplication.run(AnnotatorApplication.class, args);
 
         HttpController httpController = new HttpController();
+        httpController.createSubscription();
         httpController.getEntities();
     }
 
