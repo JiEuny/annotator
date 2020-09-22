@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.apache.jena.datatypes.RDFDatatype;
+import com.semantic.annotator.validation.Validator;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
@@ -28,7 +28,7 @@ public class Annotator {
     static String nameIndivual_type = "http://www.w3.org/2002/07/owl#Namedindividual";
     static String url = "jdbc:virtuoso://172.20.0.129:1111";
 
-    public Annotator(String graph_name, String template, String entity_id, ArrayList<String> hub_data) {
+    public Annotator(String graph_name, String template, String entity_id, ArrayList<String> hub_data, Validator validator) {
 
         ArrayList<String> Domain_list = new ArrayList<>();
         ArrayList<String> typeList = new ArrayList<>();
@@ -108,14 +108,30 @@ public class Annotator {
             }
         }
 
-        VirtModel vm = VirtModel.openDatabaseModel(graph_name, url, "dba", "dba");
-        String drop_graph_query = "DROP SILENT GRAPH <" + graph_name +">";
-        VirtuosoUpdateRequest virtuosoUpdateRequest = VirtuosoUpdateFactory.create(drop_graph_query, vm);
-        virtuosoUpdateRequest.exec();
-        System.out.println("<" + graph_name + "> drop graph");
-        vm.add(model);
-        System.out.println("<" + graph_name + "> " + model.size()+ " triples created");
-        vm.close();
+        validator.createOWLOntologyFromInstance(model);
+
+        try {
+
+            if( validator.isConsistent() && validator.isEntailed() ) {
+
+                System.out.println("Validator work");
+
+                VirtModel vm = VirtModel.openDatabaseModel(graph_name, url, "dba", "dba");
+                String drop_graph_query = "DROP SILENT GRAPH <" + graph_name +">";
+                VirtuosoUpdateRequest virtuosoUpdateRequest = VirtuosoUpdateFactory.create(drop_graph_query, vm);
+                virtuosoUpdateRequest.exec();
+                System.out.println("<" + graph_name + "> drop graph");
+                vm.add(model);
+                System.out.println("<" + graph_name + "> " + model.size()+ " triples created");
+                vm.close();
+            }
+        } catch ( Validator.NullOntologyException e) {
+
+        }
+
+
+
+
 
     }
 }

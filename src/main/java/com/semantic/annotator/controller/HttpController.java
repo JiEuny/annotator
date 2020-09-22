@@ -3,6 +3,7 @@ package com.semantic.annotator.controller;
 import com.google.gson.*;
 import com.semantic.annotator.annotation.*;
 import com.semantic.annotator.resource.*;
+import com.semantic.annotator.validation.Validator;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -39,6 +40,8 @@ public class HttpController {
     HttpHeaders headers = new HttpHeaders();
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    Validator validator = new Validator();
 
     public void getEntities() {
 
@@ -85,27 +88,27 @@ public class HttpController {
         }
 
         for(int i = 0; i< offStreetParkingList.size(); i++) {
-            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(i));
+            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(i), validator);
         }
 
         for(int i = 0; i<parkingSpotList.size(); i++) {
-            ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(i));
+            ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(i), validator);
         }
 
         for(int i = 0; i<airQualityObservedList.size(); i++) {
-            AirObservedAnnotation airObservedAnnotation = new AirObservedAnnotation(airQualityObservedList.get(i));
+            AirObservedAnnotation airObservedAnnotation = new AirObservedAnnotation(airQualityObservedList.get(i), validator);
         }
 
         for(int i = 0; i<airQualityForecastList.size(); i++) {
-            AirForecastAnnotation airForecastAnnotation = new AirForecastAnnotation(airQualityForecastList.get(i));
+            AirForecastAnnotation airForecastAnnotation = new AirForecastAnnotation(airQualityForecastList.get(i), validator);
         }
 
         for (int i = 0; i<weatherObservedList.size(); i++) {
-            WeatherObservedAnnotation weatherObservedAnnotation = new WeatherObservedAnnotation(weatherObservedList.get(i));
+            WeatherObservedAnnotation weatherObservedAnnotation = new WeatherObservedAnnotation(weatherObservedList.get(i), validator);
         }
 
         for(int i = 0; i<weatherForecastList.size(); i++) {
-            WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(i));
+            WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(i), validator);
         }
 
     }
@@ -150,37 +153,37 @@ public class HttpController {
 
             offStreetParkings = gson.fromJson(jsonArray, OffStreetParking[].class);
             offStreetParkingList = Arrays.asList(offStreetParkings);
-            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(0));
+            OffStreetParkingAnnotation parkingAnnotation = new OffStreetParkingAnnotation(offStreetParkingList.get(0), validator);
 
         } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("ParkingSpot\"")) {
 
             parkingSpots = gson.fromJson(jsonArray, ParkingSpot[].class);
             parkingSpotList = Arrays.asList(parkingSpots);
-            ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(0));
+            ParkingSpotAnnotation parkingSpotAnnotation = new ParkingSpotAnnotation(parkingSpotList.get(0), validator);
 
         } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("AirQualityObserved\"")) {
 
             airQualityObserveds = gson.fromJson(jsonArray, AirQualityObserved[].class);
             airQualityObservedList = Arrays.asList(airQualityObserveds);
-            AirObservedAnnotation airObservedAnnotation = new AirObservedAnnotation(airQualityObservedList.get(0));
+            AirObservedAnnotation airObservedAnnotation = new AirObservedAnnotation(airQualityObservedList.get(0), validator);
 
         } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("AirQualityForecast\"")) {
 
             airQualityForecasts = gson.fromJson(jsonArray, AirQualityForecast[].class);
             airQualityForecastList = Arrays.asList(airQualityForecasts);
-            AirForecastAnnotation airForecastAnnotation = new AirForecastAnnotation(airQualityForecastList.get(0));
+            AirForecastAnnotation airForecastAnnotation = new AirForecastAnnotation(airQualityForecastList.get(0), validator);
 
         } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("WeatherObserved\"")) {
 
             weatherObserveds = gson.fromJson(jsonArray, WeatherObserved[].class);
             weatherObservedList = Arrays.asList(weatherObserveds);
-            WeatherObservedAnnotation weatherObservedAnnotation = new WeatherObservedAnnotation(weatherObservedList.get(0));
+            WeatherObservedAnnotation weatherObservedAnnotation = new WeatherObservedAnnotation(weatherObservedList.get(0), validator);
 
         } else if(jsonObject.get("subscriptionId").toString().split(":")[3].equals("WeatherForecast\"")) {
 
             weatherForecasts = gson.fromJson(jsonArray, WeatherForecast[].class);
             weatherForecastList = Arrays.asList(weatherForecasts);
-            WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(0));
+            WeatherForecastAnnotation weatherForecastAnnotation = new WeatherForecastAnnotation(weatherForecastList.get(0), validator);
 
         }
 
