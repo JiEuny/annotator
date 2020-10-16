@@ -126,7 +126,7 @@ public class Annotator {
                 vm.close();
             }
         } catch ( Validator.NullOntologyException e) {
-
+            e.toString();
         }
 
 
