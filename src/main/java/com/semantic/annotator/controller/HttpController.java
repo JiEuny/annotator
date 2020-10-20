@@ -35,7 +35,8 @@ public class HttpController {
     List<WeatherForecast> weatherForecastList;
 
     RestTemplate restTemplate = new RestTemplate();
-    String url = "http://localhost:8080";
+
+    String apiUrl = "http://172.20.0.129:8080";
 
     HttpHeaders headers = new HttpHeaders();
 
@@ -58,7 +59,7 @@ public class HttpController {
 
 
         for(int i = 0; i < type.size(); i++ ) {
-            String result = restTemplate.exchange(url+type.get(i), HttpMethod.GET, entity, String.class).getBody();
+            String result = restTemplate.exchange(apiUrl+type.get(i), HttpMethod.GET, entity, String.class).getBody();
 
             switch (i) {
                 case 0:
@@ -118,13 +119,12 @@ public class HttpController {
         headers.set("Accept", "application/json");
         headers.set("Content-Type", "application/ld+json");
 
-        String subscripntion = "\\src\\main\\java\\com\\semantic\\Annotator\\controller\\SubscriptionList.json";
+        String subscriptionFile = "\\src\\main\\java\\com\\semantic\\Annotator\\controller\\SubscriptionList.json";
 
         FileReader reader = null;
-        List<String> subList = null;
 
         try {
-            reader = new FileReader(System.getProperty("user.dir") + subscripntion);
+            reader = new FileReader(System.getProperty("user.dir") + subscriptionFile);
         } catch (FileNotFoundException e) {
 
         }
@@ -135,7 +135,7 @@ public class HttpController {
 
         for (int i = 0; i<jsonArray.size(); i++) {
             HttpEntity<String> entity = new HttpEntity<String>(jsonArray.get(i).toString(), headers);
-            String result = restTemplate.exchange(url+"/subscriptions", HttpMethod.POST, entity, String.class).getBody();
+            String result = restTemplate.exchange(apiUrl+"/subscriptions", HttpMethod.POST, entity, String.class).getBody();
             System.out.println("create"+result);
         }
 

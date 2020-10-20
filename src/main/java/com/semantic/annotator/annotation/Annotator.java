@@ -26,7 +26,9 @@ public class Annotator {
     FileReader reader = null;
     static String type = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
     static String nameIndivual_type = "http://www.w3.org/2002/07/owl#Namedindividual";
-    static String url = "jdbc:virtuoso://172.20.0.129:1111";
+    static String dbUrl = "jdbc:virtuoso://172.20.0.129:1111";
+    static String dbUser = "dba";
+    static String dbPass = "dba";
 
     public Annotator(String graph_name, String template, String entity_id, ArrayList<String> hub_data, Validator validator) {
 
@@ -116,7 +118,7 @@ public class Annotator {
 
                 System.out.println("Validator work");
 
-                VirtModel vm = VirtModel.openDatabaseModel(graph_name, url, "dba", "dba");
+                VirtModel vm = VirtModel.openDatabaseModel(graph_name, dbUrl, dbUser, dbPass);
                 String drop_graph_query = "DROP SILENT GRAPH <" + graph_name +">";
                 VirtuosoUpdateRequest virtuosoUpdateRequest = VirtuosoUpdateFactory.create(drop_graph_query, vm);
                 virtuosoUpdateRequest.exec();
