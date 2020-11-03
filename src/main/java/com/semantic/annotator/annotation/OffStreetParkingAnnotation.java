@@ -10,7 +10,7 @@ import java.util.*;
 public class OffStreetParkingAnnotation {
 
     String graph_name = "http://www.city-hub.kr/ontologies/2019/1/parking#";
-    String template = "\\src\\main\\java\\com\\semantic\\Annotator\\template\\OffStreetParking.json";
+    String template = "/src/main/java/com/semantic/annotator/template/OffStreetParking.json";
 
 
     public OffStreetParkingAnnotation(OffStreetParking data, Validator validator) {

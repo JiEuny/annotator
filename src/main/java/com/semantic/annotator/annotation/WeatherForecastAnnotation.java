@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class WeatherForecastAnnotation {
 
     String graph_name = "http://www.city-hub.kr/ontologies/2019/1/weather#";
-    String template = "\\src\\main\\java\\com\\semantic\\Annotator\\template\\WeatherEstimation.json";
+    String template = "/src/main/java/com/semantic/annotator/template/WeatherEstimation.json";
 
     public WeatherForecastAnnotation(WeatherForecast data, Validator validator) {
 

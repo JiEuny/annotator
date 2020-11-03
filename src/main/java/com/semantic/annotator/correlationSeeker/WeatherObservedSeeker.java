@@ -21,8 +21,8 @@ public class WeatherObservedSeeker {
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
                 field("location.value.type", "locationType").
-                field("location.value.coordinates[0]", "latitute").
-                field("location.value.coordinates[1]", "longitude").
+                field("location.value.coordinates[1]", "latitute").
+                field("location.value.coordinates[0]", "longitude").
                 field("weatherObservation.observedAt","observedAt").
                 byDefault().
                 register();

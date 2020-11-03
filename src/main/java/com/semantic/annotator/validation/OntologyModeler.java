@@ -9,6 +9,8 @@ import org.apache.jena.rdf.model.Model;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class OntologyModeler {
@@ -173,7 +175,7 @@ public class OntologyModeler {
             manager.applyChange( axiom_to_add );
         }
 
-
+        saveOntology(ontology,manager);
         return ontology;
     }
 
@@ -382,7 +384,25 @@ public class OntologyModeler {
 
         return ontology;
     }
+    public void saveOntology( OWLOntology ontology, OWLOntologyManager manager) {
 
+        //OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+
+        IRI documentIRI = IRI
+                .create("http://www.city-hub.kr/ontologies/2019/1/parking#exampleinstance.owl");
+
+        File file;
+        try {
+            file = File.createTempFile("owlapiexamples", ".txt", new File("D:/"));
+            manager.saveOntology(ontology, IRI.create(file.toURI()));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }catch(OWLOntologyStorageException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     ArrayList<String> getObjectPropertiesFromVocabularies(){
 

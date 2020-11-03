@@ -32,8 +32,8 @@ public class OffStreetParkingSeeker {
                 field("priceCurrency.value[0]", "priceCurrency").
                 field("image.value","image").
                 field("location.value.type","locationType").
-                field("location.value.coordinates[0]","latitute").
-                field("location.value.coordinates[1]","longitude").
+                field("location.value.coordinates[0]","longitude").
+                field("location.value.coordinates[1]","latitute").
                 field("address.value.addressCountry", "addressCountry").
                 field("address.value.addressRegion", "addressRegion").
                 field("address.value.addressLocality", "addressLocality").

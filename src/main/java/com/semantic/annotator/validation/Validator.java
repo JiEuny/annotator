@@ -1,8 +1,11 @@
 package com.semantic.annotator.validation;
 
 import org.apache.jena.rdf.model.Model;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.*;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Validator
 {
@@ -85,6 +88,8 @@ public class Validator
             e.printStackTrace();
         }
     }
+
+
 
     public class NullOntologyException extends Exception{
 

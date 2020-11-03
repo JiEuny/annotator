@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class AirForecastAnnotation {
 
     String graph_name = "http://www.city-hub.kr/ontologies/2019/1/air-quality#";
-    String template = "\\src\\main\\java\\com\\semantic\\Annotator\\template\\AirQualityEstimation.json";
+    String template = "/src/main/java/com/semantic/annotator/template/AirQualityEstimation.json";
 
     public AirForecastAnnotation(AirQualityForecast data, Validator validator) {
 

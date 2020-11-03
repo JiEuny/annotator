@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ParkingSpotAnnotation {
 
     String graph_name = "http://www.city-hub.kr/ontologies/2019/1/parking#";
-    String template = "\\src\\main\\java\\com\\semantic\\Annotator\\template\\ParkingSpot.json";
+    String template = "/src/main/java/com/semantic/annotator/template/ParkingSpot.json";
 
     public ParkingSpotAnnotation(ParkingSpot data, Validator validator) {
 

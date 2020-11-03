@@ -25,8 +25,8 @@ public class AirQualityForecastSeeker {
                 field("address.value.streetAddress", "streetAddress").
                 field("address.value.addressTown", "addressTown").
                 field("location.value.type", "locationType").
-                field("location.value.coordinates[0]", "latitute").
-                field("location.value.coordinates[1]", "longitude").
+                field("location.value.coordinates[1]", "latitute").
+                field("location.value.coordinates[0]", "longitude").
                 field("airQualityPrediction.observedAt","observedAt1").
                 field("airQualityIndexPrediction.observedAt","observedAt2").
                 register();
