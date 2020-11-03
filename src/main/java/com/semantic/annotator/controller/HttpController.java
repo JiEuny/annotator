@@ -119,7 +119,7 @@ public class HttpController {
         headers.set("Accept", "application/json");
         headers.set("Content-Type", "application/ld+json");
 
-        String subscriptionFile = "\\src\\main\\java\\com\\semantic\\Annotator\\controller\\SubscriptionList.json";
+        String subscriptionFile = "/src/main/java/com/semantic/Annotator/controller/SubscriptionList.json";
 
         FileReader reader = null;
 
