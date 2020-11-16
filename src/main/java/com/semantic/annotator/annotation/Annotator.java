@@ -25,7 +25,7 @@ public class Annotator {
 
     FileReader reader = null;
     static String type = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
-    static String nameIndivual_type = "http://www.w3.org/2002/07/owl#Namedindividual";
+    static String nameIndivual_type = "http://www.w3.org/2002/07/owl#NamedIndividual";
     static String dbUrl = "jdbc:virtuoso://172.20.0.129:1111";
     static String dbUser = "dba";
     static String dbPass = "dba";
